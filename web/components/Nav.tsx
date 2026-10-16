@@ -8,6 +8,7 @@ const links = [
   { href: "/detect", label: "Detect", icon: "🔍" },
   { href: "/act", label: "Act", icon: "🎯" },
   { href: "/methodology", label: "Method", icon: "🧾" },
+  { href: "/upload", label: "Upload", icon: "⤴" },
 ];
 
 export default function Nav() {
