@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "THE MONEY LEAK — Revenue Intelligence",
+  title: "LeakGuard — Revenue Intelligence",
   description:
     "Business decision-support dashboard: detect margin and return-rate anomalies across retail segments.",
 };
