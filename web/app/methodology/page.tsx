@@ -41,6 +41,49 @@ export default function MethodologyPage() {
             </div>
           ))}
         </dl>
+        {/* 4-model sweep — best highlighted, rest compact */}
+        <div className="mt-4">
+          <h3 className="text-xs font-bold uppercase tracking-wide text-red-700/70">
+            4-model sweep — same data, same split
+          </h3>
+          <div className="tnum mt-2 overflow-hidden rounded-lg border border-red-200 text-sm">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-red-100/60 text-left text-[11px] uppercase tracking-wide text-red-700/70">
+                  <th className="px-3 py-1.5 font-semibold">Model</th>
+                  <th className="px-3 py-1.5 font-semibold">AUC</th>
+                  <th className="px-3 py-1.5 font-semibold">Precision</th>
+                  <th className="px-3 py-1.5 font-semibold">Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(m.models.model_comparison as any[]).map((r: any, i: number) => (
+                  <tr
+                    key={r.model}
+                    className={i === 0 ? "bg-emerald-50 font-bold text-emerald-900" : "bg-white/70 text-red-900/80"}
+                  >
+                    <td className="px-3 py-1.5">
+                      {r.model}
+                      {i === 0 && (
+                        <span className="ml-2 rounded-full bg-emerald-200 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-800">
+                          highest
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-3 py-1.5">{r.auc}</td>
+                    <td className="px-3 py-1.5">{r.precision}</td>
+                    <td className="px-3 py-1.5">{r.recall}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs leading-relaxed text-red-700/80">
+            Best AUC 0.508 is still essentially a coin flip — the sweep proves the problem is the
+            data (random labels), not the model choice. Full details in{" "}
+            <span className="font-mono">ml/MODEL_COMPARISON.md</span>.
+          </p>
+        </div>
       </div>
 
       {/* Assumptions */}
