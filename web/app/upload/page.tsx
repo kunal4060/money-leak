@@ -7,10 +7,12 @@ import {
   analyzeTransactions,
   buildProductMap,
   buildRegionMap,
+  forecastDemand,
   missingColumns,
   REQUIRED_TXN_COLUMNS,
   PRODUCT_COLUMNS,
   CUSTOMER_COLUMNS,
+  type DemandForecast,
   type Row,
   type UploadResult,
 } from "@/lib/upload-analysis";
@@ -195,6 +197,7 @@ export default function UploadPage() {
   const [error, setError] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [result, setResult] = useState<UploadResult | null>(null);
+  const [forecast, setForecast] = useState<DemandForecast[] | null>(null);
   const [aiSummary, setAiSummary] = useState<string | null>(null);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
@@ -203,6 +206,7 @@ export default function UploadPage() {
     setter(f);
     setError(null);
     setResult(null);
+    setForecast(null);
     setAiSummary(null);
     setAiError(null);
   };
@@ -210,6 +214,7 @@ export default function UploadPage() {
   const analyze = async () => {
     setError(null);
     setResult(null);
+    setForecast(null);
     setAiSummary(null);
     setAiError(null);
     if (!txnFile) {
@@ -252,6 +257,7 @@ export default function UploadPage() {
       }
 
       setResult(analyzeTransactions(txn.rows, products, regions));
+      setForecast(forecastDemand(txn.rows, products));
     } catch (e) {
       setError(`Could not parse the CSV files: ${e instanceof Error ? e.message : "unknown error"}`);
     } finally {
@@ -449,6 +455,56 @@ export default function UploadPage() {
               Demo analysis — runs 100% in your browser.
             </p>
           </div>
+
+          {forecast && forecast.length > 0 && (
+            <div className="card animate-fade-up overflow-hidden p-0">
+              <div className="border-b border-slate-200 px-5 py-4">
+                <h2 className="text-base font-bold text-slate-900">🔮 Demand forecast</h2>
+                <p className="mt-0.5 text-xs text-slate-500">
+                  Next-3-month forecast per category = 3-month moving average of completed
+                  quantity.
+                </p>
+              </div>
+              <div className="scroll-x overflow-x-auto">
+                <table className="w-full min-w-[560px] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-200 bg-slate-50/95 text-xs uppercase tracking-wide text-slate-500">
+                      <th className="px-4 py-3 font-semibold">Category</th>
+                      <th className="px-4 py-3 font-semibold">Last-3-mo avg</th>
+                      <th className="px-4 py-3 font-semibold">M+1</th>
+                      <th className="px-4 py-3 font-semibold">M+2</th>
+                      <th className="px-4 py-3 font-semibold">M+3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {forecast.map((f) => (
+                      <tr
+                        key={f.category}
+                        className="border-b border-slate-100 transition-colors last:border-0 hover:bg-emerald-50/50"
+                      >
+                        <td className="px-4 py-3 font-bold text-slate-900">{f.category}</td>
+                        <td className="tnum px-4 py-3 text-slate-600">
+                          {fmtInt(Math.round(f.last3Avg))}
+                        </td>
+                        <td className="tnum px-4 py-3 font-semibold text-emerald-700">
+                          {fmtInt(Math.round(f.m1))}
+                        </td>
+                        <td className="tnum px-4 py-3 font-semibold text-emerald-700">
+                          {fmtInt(Math.round(f.m2))}
+                        </td>
+                        <td className="tnum px-4 py-3 font-semibold text-emerald-700">
+                          {fmtInt(Math.round(f.m3))}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="border-t border-slate-100 px-5 py-3 text-center text-xs text-slate-400">
+                Forecast = 3-month moving average · completed orders only.
+              </p>
+            </div>
+          )}
 
           {/* AI summary */}
           <div className="card animate-fade-up">
