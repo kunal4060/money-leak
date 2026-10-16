@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --slate-deep: #0f172a;
+  --emerald: #10b981;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900 antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+/* tabular numerals for metrics */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-slate-200 shadow-[0_1px_3px_rgba(15,23,42,0.06),0_4px_12px_rgba(15,23,42,0.04)] p-5;
+}
+
+.card-hover {
+  @apply transition-all duration-150 hover:shadow-[0_4px_16px_rgba(15,23,42,0.10)] hover:-translate-y-0.5;
+}
+
+.kicker {
+  @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500;
+}
+
+.recharts-wrapper *:focus {
+  outline: none;
+}
