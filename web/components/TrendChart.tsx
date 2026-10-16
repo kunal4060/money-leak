@@ -54,8 +54,14 @@ function TrendTooltip({ active, payload, label }: any) {
 
 export default function TrendChart({ data }: { data: TrendPoint[] }) {
   const [mounted, setMounted] = useState(false);
+  const [narrow, setNarrow] = useState(false);
   useEffect(() => {
     setMounted(true);
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onChange = () => setNarrow(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
   if (!mounted) return <ChartSkeleton label="Loading demand trend…" />;
 
@@ -75,7 +81,7 @@ export default function TrendChart({ data }: { data: TrendPoint[] }) {
             tick={{ fontSize: 11, fill: "#6C7570", fontFamily: "var(--font-sans)" }}
             tickLine={false}
             axisLine={{ stroke: "#E1E6E0" }}
-            interval={1}
+            interval={narrow ? 2 : 1}
             angle={-30}
             dy={12}
             height={52}
