@@ -226,6 +226,54 @@ export function analyzeTransactions(
   };
 }
 
+export interface DemandForecast {
+  category: string;
+  /** average monthly completed quantity over the last (up to) 3 observed months */
+  last3Avg: number;
+  m1: number;
+  m2: number;
+  m3: number;
+}
+
+/**
+ * Next-3-month demand forecast per category = 3-month moving average of
+ * completed quantity over the last 3 observed months (mirrors ml/pipeline.py).
+ * If no products were uploaded (empty map), everything groups as "All products".
+ */
+export function forecastDemand(
+  rows: Row[],
+  products: Map<string, ProductInfo>
+): DemandForecast[] {
+  const noProducts = products.size === 0;
+  const monthly = new Map<string, Map<string, number>>(); // category -> YYYY-MM -> qty
+  for (const r of rows) {
+    const txnId = (r.transaction_id || "").trim();
+    const ts = (r.timestamp || "").trim();
+    if (!txnId || !ts) continue;
+    const period = ts.slice(0, 7);
+    if (!/^\d{4}-\d{2}$/.test(period)) continue;
+    if (normStatus(r.status) !== "completed") continue;
+    const prod = products.get((r.product_id || "").trim());
+    const category = noProducts ? "All products" : prod ? prod.category : "Unknown";
+    let per = monthly.get(category);
+    if (!per) {
+      per = new Map<string, number>();
+      monthly.set(category, per);
+    }
+    per.set(period, (per.get(period) || 0) + num(r.quantity));
+  }
+  const out: DemandForecast[] = [];
+  for (const [category, per] of monthly) {
+    const periods = [...per.keys()].sort();
+    const last3 = periods.slice(-3);
+    if (last3.length === 0) continue;
+    const avg = mean(last3.map((p) => per.get(p) || 0));
+    out.push({ category, last3Avg: avg, m1: avg, m2: avg, m3: avg });
+  }
+  out.sort((a, b) => a.category.localeCompare(b.category));
+  return out;
+};
+
 /** Build a lookup map from parsed product rows. */
 export function buildProductMap(rows: Row[]): Map<string, ProductInfo> {
   const m = new Map<string, ProductInfo>();
