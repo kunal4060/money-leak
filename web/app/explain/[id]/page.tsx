@@ -15,6 +15,7 @@ import {
 } from "@/lib/data";
 import SeverityBadge from "@/components/SeverityBadge";
 import ObservedVsExpected from "@/components/ObservedVsExpected";
+import { IconAlert, IconArrowRight } from "@/components/icons";
 
 export function generateStaticParams() {
   return leaks.map((l) => ({ id: l.id }));
@@ -69,64 +70,61 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
   return (
     <div className="space-y-6">
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="animate-fade-up flex items-center gap-2 text-sm text-slate-500">
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-ink2">
         <Link
           href="/detect"
-          className="rounded-md px-1 py-0.5 font-medium text-emerald-700 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+          className="rounded-md px-1 py-0.5 font-medium text-accent-deep transition-colors hover:bg-accent-soft"
         >
           ← All flags
         </Link>
-        <span aria-hidden className="text-slate-300">/</span>
-        <span className="tnum font-bold text-slate-800">{leak.id}</span>
+        <span aria-hidden className="text-line">/</span>
+        <span className="tnum font-mono text-[13px] font-semibold text-ink">{leak.id}</span>
       </nav>
 
       {/* Header */}
-      <div className="animate-fade-up flex flex-wrap items-center justify-between gap-3" style={{ animationDelay: "60ms" }}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="tnum text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+            <h1 className="tnum font-mono text-2xl font-bold tracking-tight text-ink sm:text-3xl">
               {leak.id}
             </h1>
             <SeverityBadge severity={leak.severity} />
           </div>
-          <p className="mt-1.5 text-sm text-slate-500">
+          <p className="mt-1.5 text-sm text-ink2">
             {metricLabel[leak.metric]} · {leak.segment.category} · {leak.segment.region} ·{" "}
             {leak.segment.channel} · {fmtMonth(leak.period)}
           </p>
         </div>
-        <span className="rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-500 shadow-sm">
+        <span className="rounded-lg border border-line bg-paper px-3 py-1.5 font-mono text-[11px] text-fog">
           Detection: z-score within category, |z| &gt; 2.5 flagged
         </span>
       </div>
 
       {/* Main visual + evidence */}
       <div className="grid gap-4 lg:grid-cols-5">
-        <div className="card animate-fade-up lg:col-span-3" style={{ animationDelay: "100ms" }}>
+        <div className="card lg:col-span-3">
           <h2 className="kicker mb-4">Observed vs expected</h2>
           <ObservedVsExpected observed={leak.observed} expected={leak.expected} z={leak.z} />
         </div>
-        <div
-          className="card animate-fade-up border-l-4 border-l-emerald-500 lg:col-span-2"
-          style={{ animationDelay: "160ms" }}
-        >
-          <h2 className="kicker mb-3">🧾 What the data says</h2>
-          <p className="tnum text-[15px] leading-relaxed text-slate-800">{leak.evidence}</p>
-          <div className="tnum mt-4 space-y-1.5 border-t border-slate-100 pt-3 text-sm">
+        <div className="card border-l-2 !border-l-accent lg:col-span-2">
+          <h2 className="kicker mb-3">What the data says</h2>
+          <p className="tnum text-[15px] leading-relaxed text-ink">{leak.evidence}</p>
+          <div className="tnum mt-4 space-y-2 border-t border-line pt-3.5 text-sm">
             <div className="flex justify-between">
-              <span className="text-slate-500">Gap</span>
-              <span className="font-bold text-red-600">
+              <span className="text-fog">Gap</span>
+              <span className="font-semibold text-brick-deep">
                 {fmtPct(Math.abs(leak.observed - leak.expected))}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Direction</span>
-              <span className="font-semibold text-slate-800">
+              <span className="text-fog">Direction</span>
+              <span className="font-medium text-ink">
                 {leak.z < 0 ? "Worse than expected" : "Higher than expected"}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Strength</span>
-              <span className="font-semibold text-slate-800">
+              <span className="text-fog">Strength</span>
+              <span className="font-medium text-ink">
                 {Math.abs(leak.z) > 3.5 ? "Extreme (|z| > 3.5)" : "|z| = " + Math.abs(leak.z).toFixed(2)}
               </span>
             </div>
@@ -135,9 +133,9 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Segment context */}
-      <div className="card animate-fade-up" style={{ animationDelay: "200ms" }}>
+      <div className="card">
         <h2 className="kicker mb-3">Segment context</h2>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
           {(
             [
               ["Category", leak.segment.category],
@@ -146,54 +144,54 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
               ["Month", fmtMonth(leak.segment.month)],
             ] as const
           ).map(([k, v]) => (
-            <div key={k} className="rounded-xl bg-slate-50 px-4 py-3">
-              <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">{k}</div>
-              <div className="mt-1 font-bold text-slate-900">{v}</div>
+            <div key={k} className="rounded-lg bg-page px-4 py-3">
+              <div className="font-mono text-[10px] font-medium uppercase tracking-wider text-fog">{k}</div>
+              <div className="mt-1 text-sm font-semibold text-ink">{v}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Supporting metrics */}
-      <div className="animate-fade-up" style={{ animationDelay: "240ms" }}>
-        <h2 className="mb-3 text-lg font-bold text-slate-900">Supporting metrics</h2>
+      <div>
+        <h2 className="mb-3 font-display text-lg font-bold tracking-tight text-ink">
+          Supporting metrics
+        </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {strip.map((s) => (
             <div key={s.label} className="card card-hover">
               <div className="kicker">{s.label}</div>
-              <div className="tnum mt-2 text-xl font-extrabold text-slate-900">{s.value}</div>
-              {s.hint && <div className="tnum mt-1 text-xs text-slate-500">{s.hint}</div>}
+              <div className="tnum mt-2 font-display text-xl font-bold text-ink">{s.value}</div>
+              {s.hint && <div className="tnum mt-1 font-mono text-[11px] text-fog">{s.hint}</div>}
             </div>
           ))}
         </div>
-        <p className="mt-3 text-xs text-slate-400">
+        <p className="mt-3 text-xs leading-relaxed text-fog">
           Benchmarks from portfolio-level KPIs and the campaign spend table — descriptive context only,
           not causal attribution.
         </p>
         {hasRoasProxy && (
-          <p className="mt-2 text-xs text-slate-400">
-            ⚠️ ROAS shown is a <strong>proxy metric, not real ROAS</strong> (attributed revenue ≈
-            conversions × avg order value) — see{" "}
-            <Link href="/methodology" className="font-semibold text-emerald-700 hover:underline">
-              Methodology
-            </Link>
-            .
+          <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-fog">
+            <IconAlert className="mt-0.5 h-3.5 w-3.5 shrink-0 text-clay" aria-hidden />
+            <span>
+              ROAS shown is a <strong>proxy metric, not real ROAS</strong> (attributed revenue ≈
+              conversions × avg order value) — see{" "}
+              <Link href="/methodology" className="font-semibold text-accent-deep hover:underline">
+                Methodology
+              </Link>
+              .
+            </span>
           </p>
         )}
       </div>
 
       {/* Next step */}
       <div className="flex flex-wrap gap-3">
-        <Link
-          href="/act"
-          className="rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-md"
-        >
-          🎯 See recommended actions
+        <Link href="/act" className="btn-primary">
+          See recommended actions
+          <IconArrowRight className="h-4 w-4" />
         </Link>
-        <Link
-          href="/detect"
-          className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
-        >
+        <Link href="/detect" className="btn-secondary">
           ← Back to all flags
         </Link>
       </div>

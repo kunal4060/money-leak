@@ -2,11 +2,12 @@ import Link from "next/link";
 import { buildActions, kpis, fmtUSD } from "@/lib/data";
 import SeverityBadge from "@/components/SeverityBadge";
 import { leaks } from "@/lib/data";
+import { IconArrowRight } from "@/components/icons";
 
 const effortStyle: Record<string, string> = {
-  Low: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Medium: "bg-amber-50 text-amber-700 border-amber-200",
-  High: "bg-red-50 text-red-700 border-red-200",
+  Low: "border border-accent/25 bg-accent-soft text-accent-deep",
+  Medium: "border border-clay/25 bg-clay-soft text-clay",
+  High: "border border-brick/25 bg-brick-soft text-brick-deep",
 };
 
 export default function ActPage() {
@@ -14,13 +15,14 @@ export default function ActPage() {
 
   return (
     <div className="space-y-6">
-      <div className="animate-fade-up">
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-          🎯 Act — recommended moves
+      <div className="animate-rise max-w-3xl">
+        <div className="micro-label">Action plan</div>
+        <h1 className="mt-1.5 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          Act — recommended moves
         </h1>
-        <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-500">
+        <p className="mt-2 text-sm leading-relaxed text-ink2">
           Prioritised playbook for the {actions.length} high-severity flags. Impact numbers are
-          rough directional <strong className="text-slate-700">estimates</strong> — sized against{" "}
+          rough directional <strong className="text-ink">estimates</strong> — sized against{" "}
           {fmtUSD(kpis.lost_revenue)} of lost revenue — not committed savings. 38% of completed
           transactions carry negative margins, so verify every flag against the underlying data
           before acting.
@@ -31,18 +33,14 @@ export default function ActPage() {
         {actions.map((a, i) => {
           const leak = leaks.find((l) => l.id === a.id)!;
           return (
-            <div
-              key={a.id}
-              className="card card-hover animate-fade-up flex flex-col"
-              style={{ animationDelay: `${Math.min(i, 6) * 60}ms` }}
-            >
+            <div key={a.id} className="card card-hover flex flex-col">
               <div className="flex items-start justify-between gap-2">
-                <span className="tnum flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 text-sm font-extrabold text-white shadow-sm">
-                  {i + 1}
+                <span className="tnum flex h-8 w-8 items-center justify-center rounded-lg bg-ink font-mono text-sm font-semibold text-white">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex items-center gap-2">
                   <span
-                    className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${effortStyle[a.effort]}`}
+                    className={`rounded-full px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${effortStyle[a.effort]}`}
                   >
                     {a.effort} effort
                   </span>
@@ -50,28 +48,29 @@ export default function ActPage() {
                 </div>
               </div>
 
-              <h2 className="mt-3 text-base font-bold leading-snug text-slate-900">{a.title}</h2>
+              <h2 className="mt-3 font-display text-[17px] font-bold leading-snug tracking-tight text-ink">
+                {a.title}
+              </h2>
 
-              <div className="mt-3 rounded-xl border border-slate-100 bg-slate-50 p-3.5">
-                <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-                  Why — evidence
-                </div>
-                <p className="tnum mt-1 text-[13px] leading-relaxed text-slate-700">{a.why}</p>
+              <div className="mt-3 rounded-lg border border-line bg-page p-3.5">
+                <div className="kicker">Why — evidence</div>
+                <p className="tnum mt-1.5 text-[13px] leading-relaxed text-ink2">{a.why}</p>
               </div>
 
-              <div className="mt-3 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-3.5">
-                <div className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
-                  Profit impact
-                </div>
-                <p className="tnum mt-1 text-sm font-bold text-emerald-800">{a.impactEstimate}</p>
+              <div className="mt-2.5 rounded-lg border border-accent/25 bg-accent-soft p-3.5">
+                <div className="kicker !text-accent-deep/70">Profit impact</div>
+                <p className="tnum mt-1.5 text-sm font-semibold text-accent-deep">
+                  {a.impactEstimate}
+                </p>
               </div>
 
               <div className="mt-auto pt-4">
                 <Link
                   href={`/explain/${a.id}`}
-                  className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-deep transition-colors hover:text-accent"
                 >
-                  Inspect {a.id} in detail <span aria-hidden>→</span>
+                  Inspect {a.id} in detail
+                  <IconArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -79,10 +78,10 @@ export default function ActPage() {
         })}
       </div>
 
-      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900">
-        <strong>Honesty note.</strong> This dashboard is built on synthetic DATATHON data. The
-        anomaly detector also flags clumps of synthetic noise (see{" "}
-        <Link href="/methodology" className="font-semibold underline">
+      <div className="rounded-xl border border-clay/25 bg-clay-soft p-5 text-sm leading-relaxed text-clay">
+        <strong className="text-ink">Honesty note.</strong> This dashboard is built on synthetic
+        DATATHON data. The anomaly detector also flags clumps of synthetic noise (see{" "}
+        <Link href="/methodology" className="font-semibold text-accent-deep underline">
           methodology
         </Link>
         ), and 38.07% of completed transactions show negative margins — a generator artifact. Treat

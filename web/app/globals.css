@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- LeakGuard design tokens ---------- */
 :root {
-  --slate-deep: #0f172a;
-  --emerald: #10b981;
+  --paper: #ffffff;
+  --page: #f4f5f3;
+  --ink: #141a16;
+  --ink-2: #3f4742;
+  --fog: #6c7570;
+  --line: #e1e6e0;
+  --line-dark: #c9d1c9;
+  --accent: #0c7a55;
+  --accent-deep: #095c42;
+  --accent-soft: #e4efe9;
+  --brick: #b2402b;
+  --brick-deep: #8e3220;
+  --brick-soft: #f9ece7;
+  --clay: #a4681a;
+  --clay-soft: #f7efdf;
+  --sage-soft: #edf1ec;
 }
 
 html {
@@ -12,49 +27,103 @@ html {
 }
 
 body {
-  @apply bg-slate-100 text-slate-900 antialiased;
+  @apply bg-page font-sans text-ink antialiased;
   font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(16, 185, 129, 0.22);
+  background: rgba(12, 122, 85, 0.18);
 }
 
-/* tabular numerals for metrics */
+/* tabular numerals for every metric */
 .tnum {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
 }
 
+/* ---------- surfaces ---------- */
 .card {
-  @apply bg-white rounded-2xl border border-slate-200 shadow-[0_1px_3px_rgba(15,23,42,0.06),0_4px_12px_rgba(15,23,42,0.04)] p-5;
+  @apply rounded-xl border bg-paper p-5;
+  border-color: var(--line);
+  box-shadow: 0 1px 2px rgba(20, 26, 22, 0.05);
 }
 
 .card-hover {
-  @apply transition-all duration-200 hover:shadow-[0_8px_24px_rgba(15,23,42,0.10)] hover:-translate-y-1 hover:border-slate-300;
+  @apply transition-colors duration-150;
+}
+.card-hover:hover {
+  border-color: var(--line-dark);
 }
 
+/* 11px uppercase kickers — mono for the instrument feel */
 .kicker {
-  @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500;
+  @apply font-mono text-[11px] font-medium uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fog);
 }
 
-/* ---------- entrance animation ---------- */
-@keyframes fade-up {
+.micro-label {
+  @apply font-mono text-[11px] font-medium uppercase;
+  letter-spacing: 0.14em;
+  color: var(--fog);
+}
+
+/* ---------- buttons ---------- */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-150;
+}
+.btn-primary:hover {
+  background: var(--accent-deep);
+}
+.btn-primary:disabled {
+  @apply cursor-not-allowed opacity-40;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-[10px] border bg-paper px-5 py-2.5 text-sm font-semibold text-ink transition-colors duration-150;
+  border-color: var(--line);
+}
+.btn-secondary:hover {
+  border-color: var(--line-dark);
+  background: #fafbfa;
+}
+
+/* ---------- form fields ---------- */
+.field {
+  @apply w-full rounded-[10px] border bg-paper px-3.5 py-2 text-sm text-ink outline-none transition-colors duration-150;
+  border-color: var(--line);
+}
+.field::placeholder {
+  color: #9aa39c;
+}
+.field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(12, 122, 85, 0.16);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(12, 122, 85, 0.28);
+  border-radius: 6px;
+}
+
+/* ---------- entrance (single, subtle) ---------- */
+@keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-.animate-fade-up {
-  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+.animate-rise {
+  animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ---------- skeleton shimmer ---------- */
+/* ---------- skeleton shimmer (loading states only) ---------- */
 @keyframes shimmer {
   from {
     transform: translateX(-100%);
@@ -63,38 +132,37 @@ body {
     transform: translateX(100%);
   }
 }
-
 .skeleton {
-  @apply relative overflow-hidden rounded-xl bg-slate-200/70;
+  @apply relative overflow-hidden rounded-xl;
+  background: #e7eae6;
 }
-
 .skeleton::after {
   content: "";
   @apply absolute inset-0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up,
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
   .skeleton::after {
     animation: none;
   }
-  .card-hover {
-    @apply hover:translate-y-0;
-  }
 }
 
-/* ---------- table scroll hint ---------- */
+/* ---------- thin scrollbars for tables ---------- */
 .scroll-x {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: #c3ccc2 transparent;
 }
 .scroll-x::-webkit-scrollbar {
   height: 8px;
 }
 .scroll-x::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #c3ccc2;
   border-radius: 8px;
 }
 .scroll-x::-webkit-scrollbar-track {

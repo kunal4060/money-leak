@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { leaks, fmtPct, fmtMonth, metricLabel, type Leak } from "@/lib/data";
 import SeverityBadge from "@/components/SeverityBadge";
+import { IconSearch } from "@/components/icons";
 
 type SortKey = "zAbs" | "id" | "severity";
 
@@ -58,27 +59,31 @@ export default function DetectPage() {
 
   return (
     <div className="space-y-5">
-      <div className="animate-fade-up">
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-          🔍 Detect — anomaly flags
+      <div className="animate-rise">
+        <div className="micro-label">Anomaly detection</div>
+        <h1 className="mt-1.5 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          Detect — anomaly flags
         </h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="tnum mt-2 text-sm text-ink2">
           25 strongest flags · z-score within category · cells with ≥8 transactions
         </p>
       </div>
 
       {/* Filters */}
-      <div className="card animate-fade-up flex flex-col gap-3 lg:flex-row lg:items-center" style={{ animationDelay: "80ms" }}>
+      <div className="card flex flex-col gap-3 lg:flex-row lg:items-center">
         <div className="relative w-full lg:max-w-xs">
-          <span aria-hidden className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-            ⌕
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-fog"
+          >
+            <IconSearch className="h-4 w-4" />
           </span>
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search id, category, region, channel, period…"
             aria-label="Search flags"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20"
+            className="field pl-9"
           />
         </div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Severity filter">
@@ -87,10 +92,10 @@ export default function DetectPage() {
               key={s}
               onClick={() => setSevFilter(s)}
               aria-pressed={sevFilter === s}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold capitalize transition-all ${
+              className={`rounded-full border px-3 py-1.5 text-xs font-semibold capitalize transition-colors duration-150 ${
                 sevFilter === s
-                  ? "border-emerald-600 bg-emerald-500 text-white shadow-sm"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-emerald-300 hover:text-emerald-700"
+                  ? "border-accent bg-accent text-white"
+                  : "border-line bg-paper text-ink2 hover:border-linedark hover:text-ink"
               }`}
             >
               {s}
@@ -103,75 +108,86 @@ export default function DetectPage() {
               key={m}
               onClick={() => setMetricFilter(m)}
               aria-pressed={metricFilter === m}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
+              className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors duration-150 ${
                 metricFilter === m
-                  ? "border-slate-800 bg-slate-900 text-white shadow-sm"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-400"
+                  ? "border-ink bg-ink text-white"
+                  : "border-line bg-paper text-ink2 hover:border-linedark hover:text-ink"
               }`}
             >
               {m === "all" ? "All metrics" : metricLabel[m]}
             </button>
           ))}
         </div>
-        <div className="tnum ml-auto rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">
+        <div className="tnum ml-auto rounded-full bg-sagesoft px-2.5 py-1 font-mono text-[11px] font-medium text-ink2">
           {rows.length} of {leaks.length} flags
         </div>
       </div>
 
       {/* Table */}
-      <div className="card animate-fade-up overflow-hidden p-0" style={{ animationDelay: "140ms" }}>
+      <div className="card overflow-hidden p-0">
         <div className="scroll-x overflow-x-auto">
           <table className="w-full min-w-[880px] text-left text-sm">
-            <thead className="sticky top-0 z-10">
-              <tr className="border-b border-slate-200 bg-slate-50/95 text-xs uppercase tracking-wide text-slate-500 backdrop-blur">
-                <th className="px-4 py-3 font-semibold">
-                  <button onClick={() => toggleSort("id")} className="hover:text-slate-800">
+            <thead>
+              <tr className="border-b border-line bg-page/60 font-mono text-[10px] uppercase tracking-[0.1em] text-fog">
+                <th className="px-4 py-3 font-medium">
+                  <button onClick={() => toggleSort("id")} className="transition-colors hover:text-ink">
                     ID{arrow("id")}
                   </button>
                 </th>
-                <th className="px-4 py-3 font-semibold">Segment</th>
-                <th className="px-4 py-3 font-semibold">Metric</th>
-                <th className="px-4 py-3 font-semibold">Observed vs expected</th>
-                <th className="px-4 py-3 font-semibold">
-                  <button onClick={() => toggleSort("zAbs")} className="hover:text-slate-800">
+                <th className="px-4 py-3 font-medium">Segment</th>
+                <th className="px-4 py-3 font-medium">Metric</th>
+                <th className="px-4 py-3 font-medium">Observed vs expected</th>
+                <th className="px-4 py-3 font-medium">
+                  <button onClick={() => toggleSort("zAbs")} className="transition-colors hover:text-ink">
                     |z|{arrow("zAbs")}
                   </button>
                 </th>
-                <th className="px-4 py-3 font-semibold">
-                  <button onClick={() => toggleSort("severity")} className="hover:text-slate-800">
+                <th className="px-4 py-3 font-medium">
+                  <button onClick={() => toggleSort("severity")} className="transition-colors hover:text-ink">
                     Severity{arrow("severity")}
                   </button>
                 </th>
-                <th className="px-4 py-3 font-semibold">Period</th>
+                <th className="px-4 py-3 font-medium">Period</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((l) => (
                 <tr
                   key={l.id}
-                  className="border-b border-slate-100 transition-colors last:border-0 hover:bg-emerald-50/50"
+                  className="border-b border-line/70 transition-colors last:border-0 hover:bg-accent-soft/40"
                 >
-                  <td className="tnum px-4 py-3 font-bold text-slate-900">
-                    <Link href={`/explain/${l.id}`} className="text-emerald-700 hover:underline">
+                  <td className="tnum px-4 py-3.5">
+                    <Link
+                      href={`/explain/${l.id}`}
+                      className="font-mono text-[13px] font-semibold text-accent-deep hover:underline"
+                    >
                       {l.id}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-slate-600">
+                  <td className="px-4 py-3.5 text-ink2">
                     {l.segment.category} · {l.segment.region} · {l.segment.channel}
                   </td>
-                  <td className="px-4 py-3 text-slate-600">{metricLabel[l.metric]}</td>
-                  <td className="tnum whitespace-nowrap px-4 py-3">
-                    <span className={l.metric === "margin_pct" && l.observed < 0 ? "font-bold text-red-600" : "font-bold text-slate-900"}>
+                  <td className="px-4 py-3.5 text-ink2">{metricLabel[l.metric]}</td>
+                  <td className="tnum whitespace-nowrap px-4 py-3.5">
+                    <span
+                      className={
+                        l.metric === "margin_pct" && l.observed < 0
+                          ? "font-semibold text-brick-deep"
+                          : "font-semibold text-ink"
+                      }
+                    >
                       {fmtPct(l.observed)}
                     </span>
-                    <span className="text-slate-400"> vs </span>
-                    <span className="text-slate-500">{fmtPct(l.expected)}</span>
+                    <span className="text-fog"> vs </span>
+                    <span className="text-ink2">{fmtPct(l.expected)}</span>
                   </td>
-                  <td className="tnum px-4 py-3 font-semibold text-slate-800">{l.z.toFixed(2)}</td>
-                  <td className="px-4 py-3">
+                  <td className="tnum px-4 py-3.5 font-mono text-[13px] font-medium text-ink">
+                    {l.z.toFixed(2)}
+                  </td>
+                  <td className="px-4 py-3.5">
                     <SeverityBadge severity={l.severity} />
                   </td>
-                  <td className="tnum px-4 py-3 text-slate-600">{fmtMonth(l.period)}</td>
+                  <td className="tnum px-4 py-3.5 text-ink2">{fmtMonth(l.period)}</td>
                 </tr>
               ))}
             </tbody>
@@ -179,9 +195,9 @@ export default function DetectPage() {
         </div>
         {rows.length === 0 && (
           <div className="px-4 py-12 text-center">
-            <div className="text-2xl">🔍</div>
-            <div className="mt-2 text-sm font-semibold text-slate-700">No flags match</div>
-            <div className="mt-1 text-sm text-slate-500">
+            <IconSearch className="mx-auto h-6 w-6 text-fog" />
+            <div className="mt-2 text-sm font-semibold text-ink">No flags match</div>
+            <div className="mt-1 text-sm text-ink2">
               Try clearing the search or choosing different filters.
             </div>
           </div>

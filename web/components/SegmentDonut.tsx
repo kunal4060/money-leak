@@ -5,26 +5,27 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from "recharts";
 import type { CustomerSegment } from "@/lib/data";
 import ChartSkeleton from "./ChartSkeleton";
 
-const COLORS = ["#10b981", "#0ea5e9", "#f59e0b", "#ef4444"];
+/* desaturated categorical set — no default chart colors */
+const COLORS = ["#0C7A55", "#7E8F83", "#C08A3E", "#B2402B"];
 
 function DonutTooltip({ active, payload, total }: any) {
   if (!active || !payload?.length) return null;
   const p = payload[0];
   const pct = ((Number(p.value) / total) * 100).toFixed(1);
   return (
-    <div className="min-w-[200px] rounded-xl border border-slate-200 bg-white/95 px-3 py-2.5 shadow-xl backdrop-blur">
+    <div className="min-w-[200px] rounded-[10px] border border-line bg-paper px-3 py-2.5 shadow-[0_4px_16px_rgba(20,26,22,0.08)]">
       <div className="flex items-center gap-2">
         <span
-          className="h-2.5 w-2.5 shrink-0 rounded-full"
+          className="h-2 w-2 shrink-0 rounded-full"
           style={{ background: p.payload.fill }}
         />
-        <span className="text-sm font-bold text-slate-900">{p.payload.full.name}</span>
+        <span className="text-[13px] font-semibold text-ink">{p.payload.full.name}</span>
       </div>
-      <div className="tnum mt-1 text-sm text-slate-600">
+      <div className="tnum mt-1 text-[13px] text-ink2">
         {Number(p.value).toLocaleString("en-US")} customers · {pct}%
       </div>
       {p.payload.full.return_rate !== undefined && (
-        <div className="tnum mt-0.5 text-xs text-slate-500">
+        <div className="tnum mt-0.5 text-xs text-fog">
           Return rate {Number(p.payload.full.return_rate).toFixed(1)}%
         </div>
       )}
@@ -56,8 +57,8 @@ export default function SegmentDonut({ segments }: { segments: CustomerSegment[]
               data={data}
               dataKey="value"
               nameKey="name"
-              innerRadius="62%"
-              outerRadius="90%"
+              innerRadius="64%"
+              outerRadius="92%"
               paddingAngle={3}
               strokeWidth={0}
               cornerRadius={4}
@@ -71,21 +72,21 @@ export default function SegmentDonut({ segments }: { segments: CustomerSegment[]
         </ResponsiveContainer>
         {/* center total */}
         <div className="tnum pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl font-extrabold tracking-tight text-slate-900">
+          <span className="font-display text-[26px] font-bold tracking-tight text-ink">
             {total.toLocaleString("en-US")}
           </span>
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+          <span className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-fog">
             customers
           </span>
         </div>
       </div>
       {/* custom legend */}
-      <ul className="tnum mt-2 space-y-1.5">
+      <ul className="tnum mt-3 space-y-2">
         {data.map((d) => (
-          <li key={d.name} className="flex items-center gap-2 text-sm">
-            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: d.fill }} />
-            <span className="truncate font-medium text-slate-700">{d.full.name}</span>
-            <span className="ml-auto pl-2 font-bold text-slate-900">
+          <li key={d.name} className="flex items-center gap-2.5 text-[13px]">
+            <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: d.fill }} />
+            <span className="truncate font-medium text-ink2">{d.full.name}</span>
+            <span className="ml-auto pl-2 font-semibold text-ink">
               {((d.value / total) * 100).toFixed(1)}%
             </span>
           </li>
