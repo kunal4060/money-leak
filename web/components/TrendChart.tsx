@@ -68,7 +68,7 @@ export default function TrendChart({ data }: { data: TrendPoint[] }) {
   return (
     <div className="h-72 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
+        <ComposedChart data={data} margin={{ top: 8, right: 28, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="actualFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={ACCENT} stopOpacity={0.14} />
@@ -95,10 +95,12 @@ export default function TrendChart({ data }: { data: TrendPoint[] }) {
           />
           <Tooltip content={<TrendTooltip />} cursor={{ stroke: "#C9D1C9", strokeWidth: 1 }} />
           <Legend
+            payload={[
+              { value: "Actual qty", id: "actual", type: "plainline", color: ACCENT },
+              { value: "Forecast qty", id: "forecast", type: "plainline", color: FORECAST },
+            ]}
             wrapperStyle={{ fontSize: 12, paddingTop: 8, fontFamily: "var(--font-sans)" }}
-            formatter={(v: string) => (
-              <span style={{ color: "#3F4742" }}>{v === "actual" ? "Actual qty" : "Forecast qty"}</span>
-            )}
+            formatter={(v: string) => <span style={{ color: "#3F4742" }}>{v}</span>}
             iconType="plainline"
           />
           <ReferenceLine x="Dec 2025" stroke="#C9D1C9" strokeDasharray="4 4" />
