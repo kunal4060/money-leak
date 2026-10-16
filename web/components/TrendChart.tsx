@@ -10,7 +10,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ReferenceLine,
 } from "recharts";
 import { TrendPoint } from "@/lib/data";
@@ -66,76 +65,79 @@ export default function TrendChart({ data }: { data: TrendPoint[] }) {
   if (!mounted) return <ChartSkeleton label="Loading demand trend…" />;
 
   return (
-    <div className="h-72 w-full">
-      <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={data} margin={{ top: 8, right: 28, left: 0, bottom: 0 }}>
-          <defs>
-            <linearGradient id="actualFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={ACCENT} stopOpacity={0.14} />
-              <stop offset="100%" stopColor={ACCENT} stopOpacity={0} />
-            </linearGradient>
-          </defs>
-          <CartesianGrid stroke="#ECEFEA" vertical={false} />
-          <XAxis
-            dataKey="label"
-            tick={{ fontSize: 11, fill: "#6C7570", fontFamily: "var(--font-sans)" }}
-            tickLine={false}
-            axisLine={{ stroke: "#E1E6E0" }}
-            interval={narrow ? 2 : 1}
-            angle={-30}
-            dy={12}
-            height={52}
-          />
-          <YAxis
-            tick={{ fontSize: 11, fill: "#6C7570", fontFamily: "var(--font-sans)" }}
-            tickLine={false}
-            axisLine={false}
-            width={44}
-            tickFormatter={(v: number) => `${(v / 1000).toFixed(1)}k`}
-          />
-          <Tooltip content={<TrendTooltip />} cursor={{ stroke: "#C9D1C9", strokeWidth: 1 }} />
-          <Legend
-            payload={[
-              { value: "Actual qty", id: "actual", type: "plainline", color: ACCENT },
-              { value: "Forecast qty", id: "forecast", type: "plainline", color: FORECAST },
-            ]}
-            wrapperStyle={{ fontSize: 12, paddingTop: 8, fontFamily: "var(--font-sans)" }}
-            formatter={(v: string) => <span style={{ color: "#3F4742" }}>{v}</span>}
-            iconType="plainline"
-          />
-          <ReferenceLine x="Dec 2025" stroke="#C9D1C9" strokeDasharray="4 4" />
-          <Area
-            type="monotone"
-            dataKey="actual"
-            fill="url(#actualFill)"
-            stroke="none"
-            connectNulls
-            legendType="none"
-            tooltipType="none"
-          />
-          <Line
-            type="monotone"
-            dataKey="actual"
-            name="actual"
-            stroke={ACCENT}
-            strokeWidth={2.5}
-            dot={false}
-            activeDot={{ r: 4, strokeWidth: 2, stroke: "#fff", fill: ACCENT }}
-            connectNulls
-          />
-          <Line
-            type="monotone"
-            dataKey="forecast"
-            name="forecast"
-            stroke={FORECAST}
-            strokeWidth={2}
-            strokeDasharray="6 4"
-            dot={{ r: 2.5, fill: FORECAST, strokeWidth: 0 }}
-            activeDot={{ r: 4, fill: FORECAST }}
-            connectNulls
-          />
-        </ComposedChart>
-      </ResponsiveContainer>
-    </div>
+    <>
+      <div className="h-72 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <ComposedChart data={data} margin={{ top: 8, right: 28, left: 0, bottom: 0 }}>
+            <defs>
+              <linearGradient id="actualFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={ACCENT} stopOpacity={0.14} />
+                <stop offset="100%" stopColor={ACCENT} stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid stroke="#ECEFEA" vertical={false} />
+            <XAxis
+              dataKey="label"
+              tick={{ fontSize: 11, fill: "#6C7570", fontFamily: "var(--font-sans)" }}
+              tickLine={false}
+              axisLine={{ stroke: "#E1E6E0" }}
+              interval={narrow ? 2 : 1}
+              angle={-30}
+              dy={12}
+              height={52}
+            />
+            <YAxis
+              tick={{ fontSize: 11, fill: "#6C7570", fontFamily: "var(--font-sans)" }}
+              tickLine={false}
+              axisLine={false}
+              width={44}
+              tickFormatter={(v: number) => `${(v / 1000).toFixed(1)}k`}
+            />
+            <Tooltip content={<TrendTooltip />} cursor={{ stroke: "#C9D1C9", strokeWidth: 1 }} />
+            <ReferenceLine x="Dec 2025" stroke="#C9D1C9" strokeDasharray="4 4" />
+            <Area
+              type="monotone"
+              dataKey="actual"
+              fill="url(#actualFill)"
+              stroke="none"
+              connectNulls
+              legendType="none"
+              tooltipType="none"
+            />
+            <Line
+              type="monotone"
+              dataKey="actual"
+              name="actual"
+              stroke={ACCENT}
+              strokeWidth={2.5}
+              dot={false}
+              activeDot={{ r: 4, strokeWidth: 2, stroke: "#fff", fill: ACCENT }}
+              connectNulls
+            />
+            <Line
+              type="monotone"
+              dataKey="forecast"
+              name="forecast"
+              stroke={FORECAST}
+              strokeWidth={2}
+              strokeDasharray="6 4"
+              dot={{ r: 2.5, fill: FORECAST, strokeWidth: 0 }}
+              activeDot={{ r: 4, fill: FORECAST }}
+              connectNulls
+            />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="mt-2 flex items-center justify-center gap-5 font-sans text-[12px] text-[#3F4742]">
+        <span className="inline-flex items-center gap-1.5">
+          <span aria-hidden="true" className="inline-block h-0 w-6 border-t-2 border-[#0C7A55]" />
+          Actual qty
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span aria-hidden="true" className="inline-block h-0 w-6 border-t-2 border-dashed border-[#98A29B]" />
+          Forecast qty
+        </span>
+      </div>
+    </>
   );
 }
