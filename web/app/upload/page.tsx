@@ -165,7 +165,7 @@ function KpiCard({ kicker, value, sub }: { kicker: string; value: string; sub?: 
   return (
     <div className="card">
       <div className="kicker">{kicker}</div>
-      <div className="tnum mt-2.5 font-display text-[26px] font-bold tracking-tight text-ink">
+      <div className="tnum mt-2.5 font-display text-[22px] font-bold tracking-tight text-ink sm:text-[26px]">
         {value}
       </div>
       {sub && <div className="tnum mt-1.5 text-xs text-fog">{sub}</div>}
@@ -340,7 +340,7 @@ export default function UploadPage() {
             <button
               key={t.name}
               onClick={() => downloadTemplate(t)}
-              className="inline-flex items-center gap-1.5 rounded-[10px] border border-line bg-paper px-3.5 py-2 font-mono text-xs font-medium text-ink2 transition-colors duration-150 hover:border-accent/50 hover:text-accent-deep"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[10px] border border-line bg-paper px-3.5 py-2 font-mono text-xs font-medium text-ink2 transition-colors duration-150 hover:border-accent/50 hover:text-accent-deep"
             >
               <IconDownload className="h-3.5 w-3.5" />
               {t.name}
@@ -548,7 +548,7 @@ export default function UploadPage() {
                   owner to configure <span className="font-mono">GEMINI_API_KEY</span>.
                 </p>
               </div>
-              <button onClick={getAiSummary} disabled={aiLoading} className="btn-primary">
+              <button onClick={getAiSummary} disabled={aiLoading} className="btn-primary w-full sm:w-auto">
                 <IconSpark className="h-4 w-4" />
                 {aiLoading ? "Thinking…" : "Generate AI summary"}
               </button>
