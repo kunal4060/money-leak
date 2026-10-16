@@ -61,7 +61,7 @@ export default function OverviewPage() {
         />
         <div className="relative">
           <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">
-            Revenue intelligence · 2025
+            LeakGuard · Revenue intelligence · 2025
           </div>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Where is the money leaking?
