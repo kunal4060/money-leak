@@ -27,8 +27,8 @@ export default function ObservedVsExpected({
   const w = (v: number) => `${(Math.abs(v) / half) * 50}%`;
 
   const row = (label: string, value: number, color: string) => (
-    <div className="flex items-center gap-3">
-      <div className="w-24 shrink-0 text-right text-xs font-medium text-ink2">{label}</div>
+    <div className="flex items-center gap-2 sm:gap-3">
+      <div className="w-20 shrink-0 text-right text-xs font-medium text-ink2 sm:w-24">{label}</div>
       <div className="relative h-9 flex-1 rounded-lg bg-sagesoft">
         {/* zero line */}
         <div className="absolute left-1/2 top-0 h-full w-px bg-fog" />
@@ -47,7 +47,7 @@ export default function ObservedVsExpected({
           />
         )}
       </div>
-      <div className="tnum w-24 shrink-0 text-sm font-semibold text-ink">{fmtPct(value)}</div>
+      <div className="tnum w-20 shrink-0 text-sm font-semibold text-ink sm:w-24">{fmtPct(value)}</div>
     </div>
   );
 
