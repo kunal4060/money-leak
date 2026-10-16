@@ -26,20 +26,24 @@ export default function Nav() {
             </span>
           </span>
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-2">
+        <nav className="flex items-center gap-1 sm:gap-2" aria-label="Primary">
           {links.map((l) => {
             const active = pathname === l.href;
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                aria-label={l.label}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition-all ${
                   active
-                    ? "bg-emerald-500/15 text-emerald-300"
+                    ? "bg-emerald-500/15 text-emerald-300 shadow-[inset_0_0_0_1px_rgba(16,185,129,0.25)]"
                     : "text-slate-300 hover:bg-slate-800 hover:text-white"
                 }`}
               >
-                <span className="mr-1.5">{l.icon}</span>
+                <span className="mr-1.5" aria-hidden>
+                  {l.icon}
+                </span>
                 <span className="hidden sm:inline">{l.label}</span>
               </Link>
             );

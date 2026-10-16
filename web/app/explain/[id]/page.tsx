@@ -69,16 +69,19 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
   return (
     <div className="space-y-6">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-slate-500">
-        <Link href="/detect" className="font-medium text-emerald-700 hover:underline">
+      <nav aria-label="Breadcrumb" className="animate-fade-up flex items-center gap-2 text-sm text-slate-500">
+        <Link
+          href="/detect"
+          className="rounded-md px-1 py-0.5 font-medium text-emerald-700 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+        >
           ← All flags
         </Link>
-        <span>/</span>
+        <span aria-hidden className="text-slate-300">/</span>
         <span className="tnum font-bold text-slate-800">{leak.id}</span>
-      </div>
+      </nav>
 
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      <div className="animate-fade-up flex flex-wrap items-center justify-between gap-3" style={{ animationDelay: "60ms" }}>
         <div>
           <div className="flex items-center gap-3">
             <h1 className="tnum text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
@@ -86,23 +89,26 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
             </h1>
             <SeverityBadge severity={leak.severity} />
           </div>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1.5 text-sm text-slate-500">
             {metricLabel[leak.metric]} · {leak.segment.category} · {leak.segment.region} ·{" "}
             {leak.segment.channel} · {fmtMonth(leak.period)}
           </p>
         </div>
-        <span className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-500">
+        <span className="rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-500 shadow-sm">
           Detection: z-score within category, |z| &gt; 2.5 flagged
         </span>
       </div>
 
       {/* Main visual + evidence */}
       <div className="grid gap-4 lg:grid-cols-5">
-        <div className="card lg:col-span-3">
+        <div className="card animate-fade-up lg:col-span-3" style={{ animationDelay: "100ms" }}>
           <h2 className="kicker mb-4">Observed vs expected</h2>
           <ObservedVsExpected observed={leak.observed} expected={leak.expected} z={leak.z} />
         </div>
-        <div className="card border-l-4 border-l-emerald-500 lg:col-span-2">
+        <div
+          className="card animate-fade-up border-l-4 border-l-emerald-500 lg:col-span-2"
+          style={{ animationDelay: "160ms" }}
+        >
           <h2 className="kicker mb-3">🧾 What the data says</h2>
           <p className="tnum text-[15px] leading-relaxed text-slate-800">{leak.evidence}</p>
           <div className="tnum mt-4 space-y-1.5 border-t border-slate-100 pt-3 text-sm">
@@ -129,7 +135,7 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Segment context */}
-      <div className="card">
+      <div className="card animate-fade-up" style={{ animationDelay: "200ms" }}>
         <h2 className="kicker mb-3">Segment context</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {(
@@ -149,11 +155,11 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Supporting metrics */}
-      <div>
+      <div className="animate-fade-up" style={{ animationDelay: "240ms" }}>
         <h2 className="mb-3 text-lg font-bold text-slate-900">Supporting metrics</h2>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {strip.map((s) => (
-            <div key={s.label} className="card">
+            <div key={s.label} className="card card-hover">
               <div className="kicker">{s.label}</div>
               <div className="tnum mt-2 text-xl font-extrabold text-slate-900">{s.value}</div>
               {s.hint && <div className="tnum mt-1 text-xs text-slate-500">{s.hint}</div>}
@@ -180,13 +186,13 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/act"
-          className="rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-600"
+          className="rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-md"
         >
           🎯 See recommended actions
         </Link>
         <Link
           href="/detect"
-          className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-300"
+          className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
         >
           ← Back to all flags
         </Link>

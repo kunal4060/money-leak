@@ -58,7 +58,7 @@ export default function DetectPage() {
 
   return (
     <div className="space-y-5">
-      <div>
+      <div className="animate-fade-up">
         <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
           🔍 Detect — anomaly flags
         </h1>
@@ -68,54 +68,62 @@ export default function DetectPage() {
       </div>
 
       {/* Filters */}
-      <div className="card flex flex-col gap-3 lg:flex-row lg:items-center">
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search id, category, region, channel, period…"
-          className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:bg-white lg:max-w-xs"
-        />
-        <div className="flex flex-wrap gap-2">
+      <div className="card animate-fade-up flex flex-col gap-3 lg:flex-row lg:items-center" style={{ animationDelay: "80ms" }}>
+        <div className="relative w-full lg:max-w-xs">
+          <span aria-hidden className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+            ⌕
+          </span>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search id, category, region, channel, period…"
+            aria-label="Search flags"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20"
+          />
+        </div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Severity filter">
           {(["all", "high", "medium", "low"] as const).map((s) => (
             <button
               key={s}
               onClick={() => setSevFilter(s)}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold capitalize transition-colors ${
+              aria-pressed={sevFilter === s}
+              className={`rounded-full border px-3 py-1.5 text-xs font-semibold capitalize transition-all ${
                 sevFilter === s
-                  ? "border-emerald-600 bg-emerald-500 text-white"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+                  ? "border-emerald-600 bg-emerald-500 text-white shadow-sm"
+                  : "border-slate-200 bg-white text-slate-600 hover:border-emerald-300 hover:text-emerald-700"
               }`}
             >
               {s}
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Metric filter">
           {(["all", "margin_pct", "return_rate"] as const).map((m) => (
             <button
               key={m}
               onClick={() => setMetricFilter(m)}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+              aria-pressed={metricFilter === m}
+              className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
                 metricFilter === m
-                  ? "border-slate-800 bg-slate-900 text-white"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+                  ? "border-slate-800 bg-slate-900 text-white shadow-sm"
+                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-400"
               }`}
             >
               {m === "all" ? "All metrics" : metricLabel[m]}
             </button>
           ))}
         </div>
-        <div className="tnum ml-auto text-xs text-slate-500">
+        <div className="tnum ml-auto rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">
           {rows.length} of {leaks.length} flags
         </div>
       </div>
 
       {/* Table */}
-      <div className="card overflow-hidden p-0">
-        <div className="overflow-x-auto">
+      <div className="card animate-fade-up overflow-hidden p-0" style={{ animationDelay: "140ms" }}>
+        <div className="scroll-x overflow-x-auto">
           <table className="w-full min-w-[880px] text-left text-sm">
-            <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+            <thead className="sticky top-0 z-10">
+              <tr className="border-b border-slate-200 bg-slate-50/95 text-xs uppercase tracking-wide text-slate-500 backdrop-blur">
                 <th className="px-4 py-3 font-semibold">
                   <button onClick={() => toggleSort("id")} className="hover:text-slate-800">
                     ID{arrow("id")}
@@ -139,7 +147,10 @@ export default function DetectPage() {
             </thead>
             <tbody>
               {rows.map((l) => (
-                <tr key={l.id} className="border-b border-slate-100 last:border-0 hover:bg-emerald-50/40">
+                <tr
+                  key={l.id}
+                  className="border-b border-slate-100 transition-colors last:border-0 hover:bg-emerald-50/50"
+                >
                   <td className="tnum px-4 py-3 font-bold text-slate-900">
                     <Link href={`/explain/${l.id}`} className="text-emerald-700 hover:underline">
                       {l.id}
@@ -167,8 +178,12 @@ export default function DetectPage() {
           </table>
         </div>
         {rows.length === 0 && (
-          <div className="px-4 py-10 text-center text-sm text-slate-500">
-            No flags match the current filters.
+          <div className="px-4 py-12 text-center">
+            <div className="text-2xl">🔍</div>
+            <div className="mt-2 text-sm font-semibold text-slate-700">No flags match</div>
+            <div className="mt-1 text-sm text-slate-500">
+              Try clearing the search or choosing different filters.
+            </div>
           </div>
         )}
       </div>

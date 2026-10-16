@@ -14,11 +14,11 @@ export default function ActPage() {
 
   return (
     <div className="space-y-6">
-      <div>
+      <div className="animate-fade-up">
         <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
           🎯 Act — recommended moves
         </h1>
-        <p className="mt-1 max-w-3xl text-sm text-slate-500">
+        <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-500">
           Prioritised playbook for the {actions.length} high-severity flags. Impact numbers are
           rough directional <strong className="text-slate-700">estimates</strong> — sized against{" "}
           {fmtUSD(kpis.lost_revenue)} of lost revenue — not committed savings. 38% of completed
@@ -31,9 +31,13 @@ export default function ActPage() {
         {actions.map((a, i) => {
           const leak = leaks.find((l) => l.id === a.id)!;
           return (
-            <div key={a.id} className="card card-hover flex flex-col">
+            <div
+              key={a.id}
+              className="card card-hover animate-fade-up flex flex-col"
+              style={{ animationDelay: `${Math.min(i, 6) * 60}ms` }}
+            >
               <div className="flex items-start justify-between gap-2">
-                <span className="tnum flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-sm font-extrabold text-white">
+                <span className="tnum flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 text-sm font-extrabold text-white shadow-sm">
                   {i + 1}
                 </span>
                 <div className="flex items-center gap-2">
@@ -48,14 +52,14 @@ export default function ActPage() {
 
               <h2 className="mt-3 text-base font-bold leading-snug text-slate-900">{a.title}</h2>
 
-              <div className="mt-3 rounded-xl bg-slate-50 p-3">
+              <div className="mt-3 rounded-xl border border-slate-100 bg-slate-50 p-3.5">
                 <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
                   Why — evidence
                 </div>
                 <p className="tnum mt-1 text-[13px] leading-relaxed text-slate-700">{a.why}</p>
               </div>
 
-              <div className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50/60 p-3">
+              <div className="mt-3 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-3.5">
                 <div className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
                   Profit impact
                 </div>
@@ -65,9 +69,9 @@ export default function ActPage() {
               <div className="mt-auto pt-4">
                 <Link
                   href={`/explain/${a.id}`}
-                  className="text-sm font-semibold text-emerald-700 hover:underline"
+                  className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
                 >
-                  Inspect {a.id} in detail →
+                  Inspect {a.id} in detail <span aria-hidden>→</span>
                 </Link>
               </div>
             </div>

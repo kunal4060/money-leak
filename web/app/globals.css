@@ -16,6 +16,10 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+::selection {
+  background: rgba(16, 185, 129, 0.22);
+}
+
 /* tabular numerals for metrics */
 .tnum {
   font-variant-numeric: tabular-nums;
@@ -27,11 +31,74 @@ body {
 }
 
 .card-hover {
-  @apply transition-all duration-150 hover:shadow-[0_4px_16px_rgba(15,23,42,0.10)] hover:-translate-y-0.5;
+  @apply transition-all duration-200 hover:shadow-[0_8px_24px_rgba(15,23,42,0.10)] hover:-translate-y-1 hover:border-slate-300;
 }
 
 .kicker {
   @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500;
+}
+
+/* ---------- entrance animation ---------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------- skeleton shimmer ---------- */
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  @apply relative overflow-hidden rounded-xl bg-slate-200/70;
+}
+
+.skeleton::after {
+  content: "";
+  @apply absolute inset-0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .skeleton::after {
+    animation: none;
+  }
+  .card-hover {
+    @apply hover:translate-y-0;
+  }
+}
+
+/* ---------- table scroll hint ---------- */
+.scroll-x {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+.scroll-x::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-x::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+.scroll-x::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .recharts-wrapper *:focus {
