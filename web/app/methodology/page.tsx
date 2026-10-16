@@ -54,7 +54,8 @@ export default function MethodologyPage() {
             5-model sweep — same data, same split
           </h3>
           <div className="tnum mt-2 overflow-hidden rounded-lg border border-brick/20 text-sm">
-            <table className="w-full">
+            <div className="scroll-x overflow-x-auto">
+              <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="bg-brick-deep/5 text-left font-mono text-[10px] uppercase tracking-wider text-brick-deep/60">
                   <th className="px-3 py-2 font-medium">Model</th>
@@ -93,7 +94,8 @@ export default function MethodologyPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+              </table>
+            </div>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-brick-deep/70">
             Best AUC 0.508 is still essentially a coin flip — the sweep proves the problem is the
