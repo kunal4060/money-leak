@@ -1,0 +1,16 @@
+{
+  "test_accuracy": 0.5531,
+  "test_precision": 0.1871,
+  "test_recall": 0.4327,
+  "test_auc": 0.5024,
+  "n_train": 11615,
+  "n_val": 2050,
+  "n_test": 3417,
+  "positive_rate": 0.1826,
+  "epochs_trained": 25,
+  "best_val_loss": 1.1352,
+  "final_train_loss": 1.1106,
+  "final_val_loss": 1.1498,
+  "architecture": "31->128->64->32->1 (BatchNorm, ReLU, Dropout 0.3)",
+  "seed": 42
+}
