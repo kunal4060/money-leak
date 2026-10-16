@@ -186,12 +186,12 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Next step */}
-      <div className="flex flex-wrap gap-3">
-        <Link href="/act" className="btn-primary">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Link href="/act" className="btn-primary w-full sm:w-auto">
           See recommended actions
           <IconArrowRight className="h-4 w-4" />
         </Link>
-        <Link href="/detect" className="btn-secondary">
+        <Link href="/detect" className="btn-secondary w-full sm:w-auto">
           ← Back to all flags
         </Link>
       </div>
