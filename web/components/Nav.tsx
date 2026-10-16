@@ -21,7 +21,7 @@ export default function Nav() {
             $
           </span>
           <span className="text-sm font-extrabold tracking-[0.18em] text-white sm:text-base">
-            THE MONEY LEAK
+            LeakGuard
             <span className="mt-0.5 block text-[10px] font-medium tracking-[0.08em] text-slate-400">
               REVENUE INTELLIGENCE
             </span>
