@@ -44,7 +44,7 @@ export default function MethodologyPage() {
         {/* 4-model sweep — best highlighted, rest compact */}
         <div className="mt-4">
           <h3 className="text-xs font-bold uppercase tracking-wide text-red-700/70">
-            4-model sweep — same data, same split
+            5-model sweep — same data, same split
           </h3>
           <div className="tnum mt-2 overflow-hidden rounded-lg border border-red-200 text-sm">
             <table className="w-full">
@@ -68,6 +68,12 @@ export default function MethodologyPage() {
                         <span className="ml-2 rounded-full bg-emerald-200 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-800">
                           highest
                         </span>
+                      )}
+                      {r.arch && (
+                        <div className="mt-0.5 text-[10px] font-normal text-red-700/60">
+                          {r.arch} &middot; {r.params.toLocaleString("en-US")} params &middot;{" "}
+                          {r.epochs} epochs
+                        </div>
                       )}
                     </td>
                     <td className="px-3 py-1.5">{r.auc}</td>

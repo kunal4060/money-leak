@@ -304,8 +304,10 @@ export default function UploadPage() {
         <div className="mt-3 flex items-start gap-2.5 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
           <span aria-hidden className="text-lg">🔒</span>
           <p className="text-sm leading-relaxed text-emerald-900">
-            <strong>Your data never leaves your device</strong> — analysis runs entirely in this
-            browser. Nothing is uploaded to any server.
+            <strong>Your CSV files never leave your device</strong> — parsing and analysis run
+            entirely in this browser, and raw files are never uploaded to any server. Only if you
+            click <strong>✨ AI Summary</strong> are the derived flags and KPI numbers sent to our
+            serverless endpoint and on to Gemini for the summary.
           </p>
         </div>
       </div>
