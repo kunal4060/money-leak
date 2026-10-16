@@ -64,6 +64,8 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
     });
   if (txns) strip.push({ label: "Transactions in cell", value: txns });
 
+  const hasRoasProxy = strip.some((s) => s.hint?.includes("ROAS"));
+
   return (
     <div className="space-y-6">
       {/* Breadcrumb */}
@@ -162,6 +164,16 @@ export default function ExplainPage({ params }: { params: { id: string } }) {
           Benchmarks from portfolio-level KPIs and the campaign spend table — descriptive context only,
           not causal attribution.
         </p>
+        {hasRoasProxy && (
+          <p className="mt-2 text-xs text-slate-400">
+            ⚠️ ROAS shown is a <strong>proxy metric, not real ROAS</strong> (attributed revenue ≈
+            conversions × avg order value) — see{" "}
+            <Link href="/methodology" className="font-semibold text-emerald-700 hover:underline">
+              Methodology
+            </Link>
+            .
+          </p>
+        )}
       </div>
 
       {/* Next step */}
