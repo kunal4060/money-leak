@@ -14,7 +14,7 @@
     "Classifier 'prior' features (prior order count / prior return rate) are computed strictly from transactions *before* each transaction's timestamp \u2014 no future leakage.",
     "Campaign ROAS proxy: attributed_revenue \u2248 conversions \u00d7 avg completed-order value of that channel/category (no true attribution key exists).",
     "Leak detection: metrics aggregated per (category x region x channel x month) cells with >=8 transactions; z-scores computed within each category across all its cells; |z|>2.5 flagged (|z|>3.5 = high); capped at 25 strongest flags. NOTE: because the DATATHON generator independently randomizes costs/prices/statuses, many flags are clumps of synthetic noise \u2014 documented in EDA_REPORT.md, not business-certified drivers.",
-    "Cancel/return classifier: XGBoost on the specified features; trained on Completed vs Cancelled/Returned (Pending excluded). NO predictive signal found (AUC~0.49; bad rate ~18% uniform across all feature slices) \u2014 risk.json scores are schema placeholders and must not drive real decisions.",
+    "Cancel/return classifier: XGBoost on the specified features; trained on Completed vs Cancelled/Returned (Pending excluded). NO predictive signal found (AUC~0.49; bad rate ~18% uniform across all feature slices) \u2014 risk.json scores are schema placeholders and must not drive real decisions. A 4-model sweep (LogisticRegression, XGBoost, RandomForest, MLP \u2014 see ml/MODEL_COMPARISON.md) confirmed AUC 0.49\u20130.51 across all families: no learnable signal.",
     "Campaign ROAS proxy: attributed_revenue = conversions x avg completed-order value of that channel/category; no true attribution key exists in the data.",
     "Forecast: monthly quantity per category (Completed only); next-3-month forecast = 3-month moving average of last 3 observed months.",
     "Stockout risk: latest inventory record per product; risk = 0.5*stock-vs-threshold + 0.3*recent stockout history + 0.2*supplier delay vs lead time.",
@@ -50,6 +50,36 @@
       "precision": 0.33,
       "recall": 0.0,
       "auc": 0.49
-    }
+    },
+    "model_comparison": [
+      {
+        "model": "LogisticRegression",
+        "auc": 0.508,
+        "precision": 0.0,
+        "recall": 0.0,
+        "accuracy": 0.817
+      },
+      {
+        "model": "XGBoost",
+        "auc": 0.49,
+        "precision": 0.33,
+        "recall": 0.0,
+        "accuracy": 0.82
+      },
+      {
+        "model": "RandomForest",
+        "auc": 0.501,
+        "precision": 0.0,
+        "recall": 0.0,
+        "accuracy": 0.816
+      },
+      {
+        "model": "MLP (64-32)",
+        "auc": 0.487,
+        "precision": 0.162,
+        "recall": 0.165,
+        "accuracy": 0.692
+      }
+    ]
   }
 }
