@@ -168,3 +168,19 @@ export function IconArrowRight(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function IconMenu(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  );
+}
+
+export function IconClose(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base(props)}>
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  );
+}
