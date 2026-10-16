@@ -1,4 +1,4 @@
-# THE MONEY LEAK
+# LeakGuard
 
 **Detect revenue and margin leaks. Explain the drivers with evidence. Recommend the actions.**
 
