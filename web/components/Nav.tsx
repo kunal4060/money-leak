@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import {
   LogoMark,
   IconOverview,
@@ -9,6 +10,8 @@ import {
   IconAct,
   IconMethod,
   IconUpload,
+  IconMenu,
+  IconClose,
 } from "./icons";
 
 const links = [
@@ -21,10 +24,40 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // close the mobile menu on navigation
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // close on Escape / outside tap
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const onTap = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onTap);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onTap);
+    };
+  }, [open ]);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur"
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="LeakGuard home">
           <LogoMark className="h-8 w-8" />
           <span className="font-display text-[17px] font-bold tracking-tight text-ink">
             LeakGuard
@@ -33,7 +66,9 @@ export default function Nav() {
             </span>
           </span>
         </Link>
-        <nav className="flex items-center gap-0.5 sm:gap-1" aria-label="Primary">
+
+        {/* desktop nav */}
+        <nav className="hidden items-center gap-0.5 sm:flex sm:gap-1" aria-label="Primary">
           {links.map(({ href, label, Icon }) => {
             const active = pathname === href;
             return (
@@ -48,12 +83,55 @@ export default function Nav() {
                 }`}
               >
                 <Icon className="h-4 w-4" />
-                <span className="hidden sm:inline">{label}</span>
+                <span>{label}</span>
               </Link>
             );
           })}
         </nav>
+
+        {/* mobile hamburger */}
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-ink transition-colors duration-150 hover:bg-sagesoft sm:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((o) => !o)}
+        >
+          {open ? <IconClose className="h-5 w-5" /> : <IconMenu className="h-5 w-5" />}
+        </button>
       </div>
+
+      {/* mobile menu panel */}
+      {open && (
+        <nav
+          id="mobile-nav"
+          aria-label="Mobile"
+          className="border-t border-line bg-paper sm:hidden"
+        >
+          <ul className="mx-auto max-w-6xl space-y-0.5 px-4 py-3">
+            {links.map(({ href, label, Icon }) => {
+              const active = pathname === href;
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={`flex min-h-[48px] items-center gap-3 rounded-lg px-3 text-[15px] font-medium transition-colors duration-150 ${
+                      active
+                        ? "bg-accent-soft text-accent-deep"
+                        : "text-ink2 hover:bg-sagesoft hover:text-ink"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5 shrink-0" />
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
