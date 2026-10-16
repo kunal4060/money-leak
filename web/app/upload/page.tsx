@@ -158,6 +158,36 @@ function KpiCard({ kicker, value, sub, delay = 0 }: { kicker: string; value: str
   );
 }
 
+function SummaryBody({ text }: { text: string }) {
+  const blocks: { type: "ul" | "p"; lines: string[] }[] = [];
+  for (const raw of text.split("\n")) {
+    const line = raw.trim();
+    if (!line) continue;
+    const isBullet = /^([-*•]|\d+[.)])\s+/.test(line);
+    const clean = line.replace(/^([-*•]|\d+[.)])\s+/, "");
+    const last = blocks[blocks.length - 1];
+    if (isBullet && last && last.type === "ul") last.lines.push(clean);
+    else if (isBullet) blocks.push({ type: "ul", lines: [clean] });
+    else if (last && last.type === "p") last.lines.push(line);
+    else blocks.push({ type: "p", lines: [line] });
+  }
+  return (
+    <div className="space-y-2 text-sm leading-relaxed text-slate-700">
+      {blocks.map((b, i) =>
+        b.type === "ul" ? (
+          <ul key={i} className="list-disc space-y-1 pl-5">
+            {b.lines.map((l, j) => (
+              <li key={j}>{l}</li>
+            ))}
+          </ul>
+        ) : (
+          <p key={i}>{b.lines.join(" ")}</p>
+        )
+      )}
+    </div>
+  );
+}
+
 export default function UploadPage() {
   const [txnFile, setTxnFile] = useState<File | null>(null);
   const [prodFile, setProdFile] = useState<File | null>(null);
@@ -165,16 +195,23 @@ export default function UploadPage() {
   const [error, setError] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [result, setResult] = useState<UploadResult | null>(null);
+  const [aiSummary, setAiSummary] = useState<string | null>(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
 
   const pick = (setter: (f: File | null) => void) => (f: File) => {
     setter(f);
     setError(null);
     setResult(null);
+    setAiSummary(null);
+    setAiError(null);
   };
 
   const analyze = async () => {
     setError(null);
     setResult(null);
+    setAiSummary(null);
+    setAiError(null);
     if (!txnFile) {
       setError("Please upload transactions.csv first — it is required.");
       return;
@@ -219,6 +256,32 @@ export default function UploadPage() {
       setError(`Could not parse the CSV files: ${e instanceof Error ? e.message : "unknown error"}`);
     } finally {
       setAnalyzing(false);
+    }
+  };
+
+  const getAiSummary = async () => {
+    if (!result || aiLoading) return;
+    setAiLoading(true);
+    setAiError(null);
+    setAiSummary(null);
+    try {
+      const res = await fetch("/api/ai-insights", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ flags: result.flags, kpis: result.kpis }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setAiError(data?.error || `AI request failed (HTTP ${res.status})`);
+        return;
+      }
+      setAiSummary(typeof data.summary === "string" ? data.summary : "No summary returned.");
+    } catch (e) {
+      setAiError(
+        `Could not reach the AI service: ${e instanceof Error ? e.message : "unknown error"}`
+      );
+    } finally {
+      setAiLoading(false);
     }
   };
 
@@ -385,6 +448,36 @@ export default function UploadPage() {
             <p className="border-t border-slate-100 px-5 py-3 text-center text-xs text-slate-400">
               Demo analysis — runs 100% in your browser.
             </p>
+          </div>
+
+          {/* AI summary */}
+          <div className="card animate-fade-up">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 className="text-base font-bold text-slate-900">✨ AI Summary</h2>
+                <p className="mt-0.5 text-xs text-slate-500">
+                  Let Gemini read your flags and write an executive summary. Requires the site
+                  owner to configure <span className="font-mono">GEMINI_API_KEY</span>.
+                </p>
+              </div>
+              <button
+                onClick={getAiSummary}
+                disabled={aiLoading}
+                className="rounded-xl bg-violet-600 px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-white shadow transition-all hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                {aiLoading ? "Thinking…" : "✨ Generate AI summary"}
+              </button>
+            </div>
+            {aiError && (
+              <div className="mt-3 rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-800">
+                ⚠️ {aiError}
+              </div>
+            )}
+            {aiSummary && (
+              <div className="mt-3 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
+                <SummaryBody text={aiSummary} />
+              </div>
+            )}
           </div>
         </div>
       )}
