@@ -1,0 +1,18 @@
+{
+  "currency": "USD",
+  "period": {
+    "start": "2025-01-01",
+    "end": "2025-12-31"
+  },
+  "total_revenue": 7301698.25,
+  "total_margin": 1968988.4,
+  "margin_pct": 26.97,
+  "total_transactions": 18000,
+  "completed": 13962,
+  "cancelled": 1689,
+  "returned": 1431,
+  "cancel_return_rate": 17.33,
+  "stockout_product_count": 237,
+  "avg_discount_pct": 8.31,
+  "lost_revenue": 1622171.91
+}

@@ -1,0 +1,1695 @@
+{
+  "metrics": {
+    "algorithm": "XGBoost",
+    "accuracy": 0.82,
+    "precision": 0.33,
+    "recall": 0.0,
+    "auc": 0.49,
+    "train_rows": 13665,
+    "test_rows": 3417
+  },
+  "feature_importance": [
+    {
+      "feature": "payment_method_Wallet",
+      "importance": 3.11
+    },
+    {
+      "feature": "unit_cost",
+      "importance": 3.07
+    },
+    {
+      "feature": "category_Home",
+      "importance": 3.03
+    },
+    {
+      "feature": "list_price",
+      "importance": 2.99
+    },
+    {
+      "feature": "tenure_days",
+      "importance": 2.94
+    },
+    {
+      "feature": "payment_method_Card",
+      "importance": 2.94
+    },
+    {
+      "feature": "unit_price",
+      "importance": 2.93
+    },
+    {
+      "feature": "region_North",
+      "importance": 2.9
+    },
+    {
+      "feature": "region_West",
+      "importance": 2.9
+    },
+    {
+      "feature": "channel_Web",
+      "importance": 2.86
+    },
+    {
+      "feature": "category_Sports",
+      "importance": 2.85
+    },
+    {
+      "feature": "quantity",
+      "importance": 2.81
+    },
+    {
+      "feature": "channel_Store",
+      "importance": 2.81
+    },
+    {
+      "feature": "prior_return_rate",
+      "importance": 2.8
+    },
+    {
+      "feature": "region_South",
+      "importance": 2.8
+    },
+    {
+      "feature": "category_Electronics",
+      "importance": 2.8
+    },
+    {
+      "feature": "category_Fashion",
+      "importance": 2.8
+    },
+    {
+      "feature": "discount_pct",
+      "importance": 2.79
+    },
+    {
+      "feature": "prior_orders",
+      "importance": 2.78
+    },
+    {
+      "feature": "region_East",
+      "importance": 2.77
+    }
+  ],
+  "top_risky": [
+    {
+      "transaction_id": "TX001127",
+      "customer_id": "CU02441",
+      "product_id": "PR0021",
+      "prob": 0.65,
+      "status": "Returned",
+      "revenue_at_risk": 257.92
+    },
+    {
+      "transaction_id": "TX015644",
+      "customer_id": "CU00736",
+      "product_id": "PR0023",
+      "prob": 0.59,
+      "status": "Completed",
+      "revenue_at_risk": 287.07
+    },
+    {
+      "transaction_id": "TX009303",
+      "customer_id": "CU00163",
+      "product_id": "PR0097",
+      "prob": 0.59,
+      "status": "Completed",
+      "revenue_at_risk": 798.84
+    },
+    {
+      "transaction_id": "TX012722",
+      "customer_id": "CU02972",
+      "product_id": "PR0189",
+      "prob": 0.58,
+      "status": "Completed",
+      "revenue_at_risk": 33.88
+    },
+    {
+      "transaction_id": "TX000267",
+      "customer_id": "CU00180",
+      "product_id": "PR0021",
+      "prob": 0.57,
+      "status": "Completed",
+      "revenue_at_risk": 128.96
+    },
+    {
+      "transaction_id": "TX013831",
+      "customer_id": "CU00786",
+      "product_id": "PR0163",
+      "prob": 0.57,
+      "status": "Completed",
+      "revenue_at_risk": 115.11
+    },
+    {
+      "transaction_id": "TX013998",
+      "customer_id": "CU01949",
+      "product_id": "PR0198",
+      "prob": 0.51,
+      "status": "Returned",
+      "revenue_at_risk": 288.86
+    },
+    {
+      "transaction_id": "TX011985",
+      "customer_id": "CU00681",
+      "product_id": "PR0080",
+      "prob": 0.51,
+      "status": "Completed",
+      "revenue_at_risk": 160.48
+    },
+    {
+      "transaction_id": "TX011811",
+      "customer_id": "CU01049",
+      "product_id": "PR0012",
+      "prob": 0.5,
+      "status": "Cancelled",
+      "revenue_at_risk": 10.21
+    },
+    {
+      "transaction_id": "TX012092",
+      "customer_id": "CU01463",
+      "product_id": "PR0062",
+      "prob": 0.49,
+      "status": "Completed",
+      "revenue_at_risk": 287.48
+    },
+    {
+      "transaction_id": "TX015025",
+      "customer_id": "CU00704",
+      "product_id": "PR0161",
+      "prob": 0.49,
+      "status": "Returned",
+      "revenue_at_risk": 965.76
+    },
+    {
+      "transaction_id": "TX001176",
+      "customer_id": "CU01414",
+      "product_id": "PR0146",
+      "prob": 0.47,
+      "status": "Completed",
+      "revenue_at_risk": 1317.76
+    },
+    {
+      "transaction_id": "TX008145",
+      "customer_id": "CU02617",
+      "product_id": "PR0020",
+      "prob": 0.47,
+      "status": "Completed",
+      "revenue_at_risk": 63.41
+    },
+    {
+      "transaction_id": "TX012720",
+      "customer_id": "CU01680",
+      "product_id": "PR0247",
+      "prob": 0.46,
+      "status": "Cancelled",
+      "revenue_at_risk": 355.48
+    },
+    {
+      "transaction_id": "TX002187",
+      "customer_id": "CU01634",
+      "product_id": "PR0140",
+      "prob": 0.45,
+      "status": "Returned",
+      "revenue_at_risk": 315.92
+    },
+    {
+      "transaction_id": "TX003271",
+      "customer_id": "CU00010",
+      "product_id": "PR0221",
+      "prob": 0.45,
+      "status": "Completed",
+      "revenue_at_risk": 883.71
+    },
+    {
+      "transaction_id": "TX007742",
+      "customer_id": "CU01673",
+      "product_id": "PR0173",
+      "prob": 0.45,
+      "status": "Cancelled",
+      "revenue_at_risk": 117.61
+    },
+    {
+      "transaction_id": "TX001310",
+      "customer_id": "CU01182",
+      "product_id": "PR0035",
+      "prob": 0.45,
+      "status": "Completed",
+      "revenue_at_risk": 397.82
+    },
+    {
+      "transaction_id": "TX017229",
+      "customer_id": "CU02172",
+      "product_id": "PR0236",
+      "prob": 0.43,
+      "status": "Completed",
+      "revenue_at_risk": 823.88
+    },
+    {
+      "transaction_id": "TX003480",
+      "customer_id": "CU01944",
+      "product_id": "PR0071",
+      "prob": 0.43,
+      "status": "Completed",
+      "revenue_at_risk": 522.62
+    },
+    {
+      "transaction_id": "TX009386",
+      "customer_id": "CU02756",
+      "product_id": "PR0035",
+      "prob": 0.43,
+      "status": "Cancelled",
+      "revenue_at_risk": 198.91
+    },
+    {
+      "transaction_id": "TX010916",
+      "customer_id": "CU01681",
+      "product_id": "PR0012",
+      "prob": 0.42,
+      "status": "Completed",
+      "revenue_at_risk": 10.21
+    },
+    {
+      "transaction_id": "TX004324",
+      "customer_id": "CU00074",
+      "product_id": "PR0189",
+      "prob": 0.42,
+      "status": "Completed",
+      "revenue_at_risk": 41.85
+    },
+    {
+      "transaction_id": "TX016252",
+      "customer_id": "CU02082",
+      "product_id": "PR0211",
+      "prob": 0.42,
+      "status": "Completed",
+      "revenue_at_risk": 59.01
+    },
+    {
+      "transaction_id": "TX004424",
+      "customer_id": "CU02269",
+      "product_id": "PR0013",
+      "prob": 0.42,
+      "status": "Completed",
+      "revenue_at_risk": 822.04
+    },
+    {
+      "transaction_id": "TX016941",
+      "customer_id": "CU01067",
+      "product_id": "PR0021",
+      "prob": 0.41,
+      "status": "Completed",
+      "revenue_at_risk": 104.45
+    },
+    {
+      "transaction_id": "TX004052",
+      "customer_id": "CU00685",
+      "product_id": "PR0082",
+      "prob": 0.41,
+      "status": "Cancelled",
+      "revenue_at_risk": 1426.51
+    },
+    {
+      "transaction_id": "TX004711",
+      "customer_id": "CU00717",
+      "product_id": "PR0091",
+      "prob": 0.41,
+      "status": "Completed",
+      "revenue_at_risk": 20.63
+    },
+    {
+      "transaction_id": "TX006130",
+      "customer_id": "CU01267",
+      "product_id": "PR0123",
+      "prob": 0.41,
+      "status": "Completed",
+      "revenue_at_risk": 241.5
+    },
+    {
+      "transaction_id": "TX008363",
+      "customer_id": "CU01389",
+      "product_id": "PR0183",
+      "prob": 0.41,
+      "status": "Cancelled",
+      "revenue_at_risk": 81.8
+    },
+    {
+      "transaction_id": "TX006269",
+      "customer_id": "CU00329",
+      "product_id": "PR0131",
+      "prob": 0.4,
+      "status": "Completed",
+      "revenue_at_risk": 5.97
+    },
+    {
+      "transaction_id": "TX001660",
+      "customer_id": "CU01756",
+      "product_id": "PR0168",
+      "prob": 0.4,
+      "status": "Completed",
+      "revenue_at_risk": 104.0
+    },
+    {
+      "transaction_id": "TX014166",
+      "customer_id": "CU00200",
+      "product_id": "PR0175",
+      "prob": 0.4,
+      "status": "Completed",
+      "revenue_at_risk": 311.97
+    },
+    {
+      "transaction_id": "TX016451",
+      "customer_id": "CU01157",
+      "product_id": "PR0185",
+      "prob": 0.39,
+      "status": "Returned",
+      "revenue_at_risk": 1258.24
+    },
+    {
+      "transaction_id": "TX003587",
+      "customer_id": "CU00230",
+      "product_id": "PR0022",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 308.28
+    },
+    {
+      "transaction_id": "TX000825",
+      "customer_id": "CU02680",
+      "product_id": "PR0043",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 292.23
+    },
+    {
+      "transaction_id": "TX004443",
+      "customer_id": "CU00172",
+      "product_id": "PR0120",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 1440.76
+    },
+    {
+      "transaction_id": "TX012039",
+      "customer_id": "CU01771",
+      "product_id": "PR0098",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 108.91
+    },
+    {
+      "transaction_id": "TX017353",
+      "customer_id": "CU02919",
+      "product_id": "PR0040",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 476.18
+    },
+    {
+      "transaction_id": "TX013655",
+      "customer_id": "CU00762",
+      "product_id": "PR0044",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 265.32
+    },
+    {
+      "transaction_id": "TX017618",
+      "customer_id": "CU01531",
+      "product_id": "PR0226",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 185.64
+    },
+    {
+      "transaction_id": "TX006406",
+      "customer_id": "CU02824",
+      "product_id": "PR0189",
+      "prob": 0.39,
+      "status": "Completed",
+      "revenue_at_risk": 18.13
+    },
+    {
+      "transaction_id": "TX016855",
+      "customer_id": "CU00768",
+      "product_id": "PR0184",
+      "prob": 0.38,
+      "status": "Completed",
+      "revenue_at_risk": 244.02
+    },
+    {
+      "transaction_id": "TX007652",
+      "customer_id": "CU02151",
+      "product_id": "PR0123",
+      "prob": 0.38,
+      "status": "Cancelled",
+      "revenue_at_risk": 171.26
+    },
+    {
+      "transaction_id": "TX010628",
+      "customer_id": "CU02861",
+      "product_id": "PR0194",
+      "prob": 0.38,
+      "status": "Completed",
+      "revenue_at_risk": 423.02
+    },
+    {
+      "transaction_id": "TX013336",
+      "customer_id": "CU02909",
+      "product_id": "PR0163",
+      "prob": 0.38,
+      "status": "Completed",
+      "revenue_at_risk": 355.3
+    },
+    {
+      "transaction_id": "TX010153",
+      "customer_id": "CU02058",
+      "product_id": "PR0226",
+      "prob": 0.38,
+      "status": "Completed",
+      "revenue_at_risk": 178.84
+    },
+    {
+      "transaction_id": "TX014406",
+      "customer_id": "CU02980",
+      "product_id": "PR0066",
+      "prob": 0.38,
+      "status": "Completed",
+      "revenue_at_risk": 344.66
+    },
+    {
+      "transaction_id": "TX012134",
+      "customer_id": "CU00447",
+      "product_id": "PR0132",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 107.82
+    },
+    {
+      "transaction_id": "TX007265",
+      "customer_id": "CU00415",
+      "product_id": "PR0185",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 1402.88
+    },
+    {
+      "transaction_id": "TX016883",
+      "customer_id": "CU00153",
+      "product_id": "PR0226",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 55.85
+    },
+    {
+      "transaction_id": "TX009077",
+      "customer_id": "CU01434",
+      "product_id": "PR0020",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 391.45
+    },
+    {
+      "transaction_id": "TX001584",
+      "customer_id": "CU00956",
+      "product_id": "PR0065",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 1677.1
+    },
+    {
+      "transaction_id": "TX004038",
+      "customer_id": "CU00224",
+      "product_id": "PR0114",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 582.18
+    },
+    {
+      "transaction_id": "TX001020",
+      "customer_id": "CU01689",
+      "product_id": "PR0149",
+      "prob": 0.37,
+      "status": "Returned",
+      "revenue_at_risk": 722.12
+    },
+    {
+      "transaction_id": "TX000369",
+      "customer_id": "CU00434",
+      "product_id": "PR0172",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 790.11
+    },
+    {
+      "transaction_id": "TX013167",
+      "customer_id": "CU01854",
+      "product_id": "PR0028",
+      "prob": 0.37,
+      "status": "Returned",
+      "revenue_at_risk": 9.25
+    },
+    {
+      "transaction_id": "TX013541",
+      "customer_id": "CU00478",
+      "product_id": "PR0013",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 665.86
+    },
+    {
+      "transaction_id": "TX004512",
+      "customer_id": "CU01073",
+      "product_id": "PR0106",
+      "prob": 0.37,
+      "status": "Returned",
+      "revenue_at_risk": 1325.97
+    },
+    {
+      "transaction_id": "TX004384",
+      "customer_id": "CU01851",
+      "product_id": "PR0242",
+      "prob": 0.37,
+      "status": "Completed",
+      "revenue_at_risk": 381.87
+    },
+    {
+      "transaction_id": "TX012191",
+      "customer_id": "CU02602",
+      "product_id": "PR0210",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 19.69
+    },
+    {
+      "transaction_id": "TX004376",
+      "customer_id": "CU01515",
+      "product_id": "PR0100",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 32.08
+    },
+    {
+      "transaction_id": "TX008548",
+      "customer_id": "CU02224",
+      "product_id": "PR0061",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 375.16
+    },
+    {
+      "transaction_id": "TX011638",
+      "customer_id": "CU02070",
+      "product_id": "PR0187",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 652.08
+    },
+    {
+      "transaction_id": "TX012634",
+      "customer_id": "CU01082",
+      "product_id": "PR0123",
+      "prob": 0.36,
+      "status": "Returned",
+      "revenue_at_risk": 267.59
+    },
+    {
+      "transaction_id": "TX011427",
+      "customer_id": "CU02408",
+      "product_id": "PR0033",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 199.4
+    },
+    {
+      "transaction_id": "TX016517",
+      "customer_id": "CU02168",
+      "product_id": "PR0232",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 374.99
+    },
+    {
+      "transaction_id": "TX003560",
+      "customer_id": "CU01300",
+      "product_id": "PR0008",
+      "prob": 0.36,
+      "status": "Cancelled",
+      "revenue_at_risk": 35.94
+    },
+    {
+      "transaction_id": "TX015361",
+      "customer_id": "CU00864",
+      "product_id": "PR0006",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 428.52
+    },
+    {
+      "transaction_id": "TX009427",
+      "customer_id": "CU00372",
+      "product_id": "PR0085",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 398.83
+    },
+    {
+      "transaction_id": "TX008343",
+      "customer_id": "CU00987",
+      "product_id": "PR0105",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 425.32
+    },
+    {
+      "transaction_id": "TX009158",
+      "customer_id": "CU00983",
+      "product_id": "PR0028",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 33.01
+    },
+    {
+      "transaction_id": "TX005315",
+      "customer_id": "CU01787",
+      "product_id": "PR0183",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 452.84
+    },
+    {
+      "transaction_id": "TX004428",
+      "customer_id": "CU00626",
+      "product_id": "PR0221",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 353.48
+    },
+    {
+      "transaction_id": "TX002880",
+      "customer_id": "CU01219",
+      "product_id": "PR0212",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 450.9
+    },
+    {
+      "transaction_id": "TX011577",
+      "customer_id": "CU01912",
+      "product_id": "PR0237",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 405.54
+    },
+    {
+      "transaction_id": "TX007698",
+      "customer_id": "CU02654",
+      "product_id": "PR0195",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 338.98
+    },
+    {
+      "transaction_id": "TX005440",
+      "customer_id": "CU01870",
+      "product_id": "PR0158",
+      "prob": 0.36,
+      "status": "Cancelled",
+      "revenue_at_risk": 60.98
+    },
+    {
+      "transaction_id": "TX015759",
+      "customer_id": "CU02462",
+      "product_id": "PR0184",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 195.78
+    },
+    {
+      "transaction_id": "TX017020",
+      "customer_id": "CU01512",
+      "product_id": "PR0158",
+      "prob": 0.36,
+      "status": "Completed",
+      "revenue_at_risk": 121.96
+    },
+    {
+      "transaction_id": "TX001606",
+      "customer_id": "CU01072",
+      "product_id": "PR0207",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 624.29
+    },
+    {
+      "transaction_id": "TX005991",
+      "customer_id": "CU00787",
+      "product_id": "PR0091",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 28.55
+    },
+    {
+      "transaction_id": "TX005511",
+      "customer_id": "CU01594",
+      "product_id": "PR0212",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 269.8
+    },
+    {
+      "transaction_id": "TX002260",
+      "customer_id": "CU02560",
+      "product_id": "PR0040",
+      "prob": 0.35,
+      "status": "Returned",
+      "revenue_at_risk": 158.73
+    },
+    {
+      "transaction_id": "TX000376",
+      "customer_id": "CU02378",
+      "product_id": "PR0147",
+      "prob": 0.35,
+      "status": "Returned",
+      "revenue_at_risk": 796.59
+    },
+    {
+      "transaction_id": "TX016812",
+      "customer_id": "CU02650",
+      "product_id": "PR0058",
+      "prob": 0.35,
+      "status": "Returned",
+      "revenue_at_risk": 15.28
+    },
+    {
+      "transaction_id": "TX002259",
+      "customer_id": "CU02138",
+      "product_id": "PR0206",
+      "prob": 0.35,
+      "status": "Cancelled",
+      "revenue_at_risk": 248.61
+    },
+    {
+      "transaction_id": "TX016324",
+      "customer_id": "CU01095",
+      "product_id": "PR0127",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 929.63
+    },
+    {
+      "transaction_id": "TX010113",
+      "customer_id": "CU01234",
+      "product_id": "PR0241",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 1677.08
+    },
+    {
+      "transaction_id": "TX013102",
+      "customer_id": "CU02282",
+      "product_id": "PR0019",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 441.75
+    },
+    {
+      "transaction_id": "TX015919",
+      "customer_id": "CU01291",
+      "product_id": "PR0112",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 698.71
+    },
+    {
+      "transaction_id": "TX011559",
+      "customer_id": "CU02759",
+      "product_id": "PR0188",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 143.95
+    },
+    {
+      "transaction_id": "TX003676",
+      "customer_id": "CU01034",
+      "product_id": "PR0207",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 624.29
+    },
+    {
+      "transaction_id": "TX008783",
+      "customer_id": "CU02878",
+      "product_id": "PR0006",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 352.68
+    },
+    {
+      "transaction_id": "TX014800",
+      "customer_id": "CU02493",
+      "product_id": "PR0239",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 290.72
+    },
+    {
+      "transaction_id": "TX004717",
+      "customer_id": "CU02326",
+      "product_id": "PR0066",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 383.99
+    },
+    {
+      "transaction_id": "TX001646",
+      "customer_id": "CU01568",
+      "product_id": "PR0065",
+      "prob": 0.35,
+      "status": "Returned",
+      "revenue_at_risk": 1341.68
+    },
+    {
+      "transaction_id": "TX016057",
+      "customer_id": "CU02514",
+      "product_id": "PR0043",
+      "prob": 0.35,
+      "status": "Completed",
+      "revenue_at_risk": 1014.67
+    },
+    {
+      "transaction_id": "TX005208",
+      "customer_id": "CU01204",
+      "product_id": "PR0013",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 346.79
+    },
+    {
+      "transaction_id": "TX004289",
+      "customer_id": "CU00720",
+      "product_id": "PR0163",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 45.48
+    },
+    {
+      "transaction_id": "TX001971",
+      "customer_id": "CU01166",
+      "product_id": "PR0139",
+      "prob": 0.34,
+      "status": "Cancelled",
+      "revenue_at_risk": 1213.07
+    },
+    {
+      "transaction_id": "TX000886",
+      "customer_id": "CU00013",
+      "product_id": "PR0198",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 1783.1
+    },
+    {
+      "transaction_id": "TX003156",
+      "customer_id": "CU01211",
+      "product_id": "PR0169",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 409.27
+    },
+    {
+      "transaction_id": "TX002545",
+      "customer_id": "CU01958",
+      "product_id": "PR0020",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 226.27
+    },
+    {
+      "transaction_id": "TX006690",
+      "customer_id": "CU02533",
+      "product_id": "PR0020",
+      "prob": 0.34,
+      "status": "Cancelled",
+      "revenue_at_risk": 234.87
+    },
+    {
+      "transaction_id": "TX014437",
+      "customer_id": "CU02061",
+      "product_id": "PR0198",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 1426.48
+    },
+    {
+      "transaction_id": "TX000473",
+      "customer_id": "CU02049",
+      "product_id": "PR0066",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 344.66
+    },
+    {
+      "transaction_id": "TX015164",
+      "customer_id": "CU01675",
+      "product_id": "PR0152",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 165.26
+    },
+    {
+      "transaction_id": "TX001139",
+      "customer_id": "CU02998",
+      "product_id": "PR0040",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 527.61
+    },
+    {
+      "transaction_id": "TX006369",
+      "customer_id": "CU02429",
+      "product_id": "PR0250",
+      "prob": 0.34,
+      "status": "Cancelled",
+      "revenue_at_risk": 381.18
+    },
+    {
+      "transaction_id": "TX008261",
+      "customer_id": "CU02137",
+      "product_id": "PR0217",
+      "prob": 0.34,
+      "status": "Cancelled",
+      "revenue_at_risk": 39.68
+    },
+    {
+      "transaction_id": "TX017825",
+      "customer_id": "CU00632",
+      "product_id": "PR0183",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 452.84
+    },
+    {
+      "transaction_id": "TX002624",
+      "customer_id": "CU02065",
+      "product_id": "PR0218",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 1110.68
+    },
+    {
+      "transaction_id": "TX008392",
+      "customer_id": "CU01205",
+      "product_id": "PR0097",
+      "prob": 0.34,
+      "status": "Cancelled",
+      "revenue_at_risk": 1802.39
+    },
+    {
+      "transaction_id": "TX008294",
+      "customer_id": "CU01747",
+      "product_id": "PR0189",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 41.85
+    },
+    {
+      "transaction_id": "TX004067",
+      "customer_id": "CU02445",
+      "product_id": "PR0211",
+      "prob": 0.34,
+      "status": "Completed",
+      "revenue_at_risk": 163.45
+    },
+    {
+      "transaction_id": "TX002120",
+      "customer_id": "CU00529",
+      "product_id": "PR0097",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 720.95
+    },
+    {
+      "transaction_id": "TX012188",
+      "customer_id": "CU01069",
+      "product_id": "PR0131",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 7.55
+    },
+    {
+      "transaction_id": "TX013651",
+      "customer_id": "CU02606",
+      "product_id": "PR0097",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 1198.26
+    },
+    {
+      "transaction_id": "TX014768",
+      "customer_id": "CU01608",
+      "product_id": "PR0157",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 337.3
+    },
+    {
+      "transaction_id": "TX012453",
+      "customer_id": "CU00772",
+      "product_id": "PR0240",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 776.12
+    },
+    {
+      "transaction_id": "TX003595",
+      "customer_id": "CU01459",
+      "product_id": "PR0056",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 211.13
+    },
+    {
+      "transaction_id": "TX002133",
+      "customer_id": "CU02819",
+      "product_id": "PR0239",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 294.34
+    },
+    {
+      "transaction_id": "TX009038",
+      "customer_id": "CU02796",
+      "product_id": "PR0246",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 34.43
+    },
+    {
+      "transaction_id": "TX002588",
+      "customer_id": "CU02618",
+      "product_id": "PR0050",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 215.14
+    },
+    {
+      "transaction_id": "TX013194",
+      "customer_id": "CU02955",
+      "product_id": "PR0169",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 673.68
+    },
+    {
+      "transaction_id": "TX017820",
+      "customer_id": "CU00092",
+      "product_id": "PR0161",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 618.08
+    },
+    {
+      "transaction_id": "TX014928",
+      "customer_id": "CU01739",
+      "product_id": "PR0240",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 1257.3
+    },
+    {
+      "transaction_id": "TX005641",
+      "customer_id": "CU02053",
+      "product_id": "PR0239",
+      "prob": 0.33,
+      "status": "Returned",
+      "revenue_at_risk": 72.68
+    },
+    {
+      "transaction_id": "TX000847",
+      "customer_id": "CU01046",
+      "product_id": "PR0163",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 64.13
+    },
+    {
+      "transaction_id": "TX010142",
+      "customer_id": "CU00159",
+      "product_id": "PR0129",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 248.0
+    },
+    {
+      "transaction_id": "TX006756",
+      "customer_id": "CU02563",
+      "product_id": "PR0227",
+      "prob": 0.33,
+      "status": "Completed",
+      "revenue_at_risk": 505.12
+    },
+    {
+      "transaction_id": "TX007340",
+      "customer_id": "CU00162",
+      "product_id": "PR0149",
+      "prob": 0.32,
+      "status": "Returned",
+      "revenue_at_risk": 361.06
+    },
+    {
+      "transaction_id": "TX002418",
+      "customer_id": "CU01773",
+      "product_id": "PR0240",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 776.12
+    },
+    {
+      "transaction_id": "TX011851",
+      "customer_id": "CU00609",
+      "product_id": "PR0166",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 73.34
+    },
+    {
+      "transaction_id": "TX016089",
+      "customer_id": "CU02050",
+      "product_id": "PR0068",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 868.25
+    },
+    {
+      "transaction_id": "TX014798",
+      "customer_id": "CU01252",
+      "product_id": "PR0066",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 383.99
+    },
+    {
+      "transaction_id": "TX008236",
+      "customer_id": "CU00449",
+      "product_id": "PR0138",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 665.15
+    },
+    {
+      "transaction_id": "TX009839",
+      "customer_id": "CU02663",
+      "product_id": "PR0120",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 583.51
+    },
+    {
+      "transaction_id": "TX016644",
+      "customer_id": "CU02636",
+      "product_id": "PR0246",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 9.72
+    },
+    {
+      "transaction_id": "TX006107",
+      "customer_id": "CU02834",
+      "product_id": "PR0066",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 383.99
+    },
+    {
+      "transaction_id": "TX008607",
+      "customer_id": "CU00820",
+      "product_id": "PR0059",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 786.1
+    },
+    {
+      "transaction_id": "TX009473",
+      "customer_id": "CU00064",
+      "product_id": "PR0145",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 133.84
+    },
+    {
+      "transaction_id": "TX012805",
+      "customer_id": "CU00581",
+      "product_id": "PR0014",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 51.46
+    },
+    {
+      "transaction_id": "TX003563",
+      "customer_id": "CU02983",
+      "product_id": "PR0020",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 282.84
+    },
+    {
+      "transaction_id": "TX002087",
+      "customer_id": "CU01925",
+      "product_id": "PR0057",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 257.51
+    },
+    {
+      "transaction_id": "TX006992",
+      "customer_id": "CU00814",
+      "product_id": "PR0039",
+      "prob": 0.32,
+      "status": "Cancelled",
+      "revenue_at_risk": 1470.4
+    },
+    {
+      "transaction_id": "TX007481",
+      "customer_id": "CU00080",
+      "product_id": "PR0123",
+      "prob": 0.32,
+      "status": "Returned",
+      "revenue_at_risk": 1070.36
+    },
+    {
+      "transaction_id": "TX014888",
+      "customer_id": "CU00592",
+      "product_id": "PR0141",
+      "prob": 0.32,
+      "status": "Cancelled",
+      "revenue_at_risk": 103.77
+    },
+    {
+      "transaction_id": "TX015350",
+      "customer_id": "CU00986",
+      "product_id": "PR0084",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 1353.56
+    },
+    {
+      "transaction_id": "TX014343",
+      "customer_id": "CU02654",
+      "product_id": "PR0112",
+      "prob": 0.32,
+      "status": "Returned",
+      "revenue_at_risk": 967.75
+    },
+    {
+      "transaction_id": "TX007787",
+      "customer_id": "CU00818",
+      "product_id": "PR0049",
+      "prob": 0.32,
+      "status": "Returned",
+      "revenue_at_risk": 1073.85
+    },
+    {
+      "transaction_id": "TX008329",
+      "customer_id": "CU02616",
+      "product_id": "PR0022",
+      "prob": 0.32,
+      "status": "Completed",
+      "revenue_at_risk": 1541.38
+    },
+    {
+      "transaction_id": "TX013225",
+      "customer_id": "CU02670",
+      "product_id": "PR0106",
+      "prob": 0.32,
+      "status": "Cancelled",
+      "revenue_at_risk": 734.6
+    },
+    {
+      "transaction_id": "TX002941",
+      "customer_id": "CU02311",
+      "product_id": "PR0039",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 882.24
+    },
+    {
+      "transaction_id": "TX014548",
+      "customer_id": "CU00994",
+      "product_id": "PR0117",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1090.03
+    },
+    {
+      "transaction_id": "TX000655",
+      "customer_id": "CU00298",
+      "product_id": "PR0078",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1877.35
+    },
+    {
+      "transaction_id": "TX013035",
+      "customer_id": "CU00629",
+      "product_id": "PR0040",
+      "prob": 0.31,
+      "status": "Cancelled",
+      "revenue_at_risk": 98.93
+    },
+    {
+      "transaction_id": "TX012113",
+      "customer_id": "CU02334",
+      "product_id": "PR0031",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1816.65
+    },
+    {
+      "transaction_id": "TX005653",
+      "customer_id": "CU02209",
+      "product_id": "PR0105",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 227.47
+    },
+    {
+      "transaction_id": "TX016869",
+      "customer_id": "CU02046",
+      "product_id": "PR0006",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 881.7
+    },
+    {
+      "transaction_id": "TX011818",
+      "customer_id": "CU01968",
+      "product_id": "PR0183",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 72.46
+    },
+    {
+      "transaction_id": "TX005606",
+      "customer_id": "CU02231",
+      "product_id": "PR0006",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 318.29
+    },
+    {
+      "transaction_id": "TX016551",
+      "customer_id": "CU00046",
+      "product_id": "PR0134",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 467.12
+    },
+    {
+      "transaction_id": "TX006166",
+      "customer_id": "CU02539",
+      "product_id": "PR0153",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 366.19
+    },
+    {
+      "transaction_id": "TX001403",
+      "customer_id": "CU01205",
+      "product_id": "PR0201",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 475.19
+    },
+    {
+      "transaction_id": "TX016360",
+      "customer_id": "CU01091",
+      "product_id": "PR0241",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1486.6
+    },
+    {
+      "transaction_id": "TX004575",
+      "customer_id": "CU00804",
+      "product_id": "PR0201",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 105.3
+    },
+    {
+      "transaction_id": "TX013026",
+      "customer_id": "CU01010",
+      "product_id": "PR0229",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 606.14
+    },
+    {
+      "transaction_id": "TX002378",
+      "customer_id": "CU00582",
+      "product_id": "PR0043",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1168.92
+    },
+    {
+      "transaction_id": "TX014185",
+      "customer_id": "CU02167",
+      "product_id": "PR0140",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 789.79
+    },
+    {
+      "transaction_id": "TX015451",
+      "customer_id": "CU01089",
+      "product_id": "PR0239",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 52.51
+    },
+    {
+      "transaction_id": "TX005339",
+      "customer_id": "CU02285",
+      "product_id": "PR0187",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 536.68
+    },
+    {
+      "transaction_id": "TX010958",
+      "customer_id": "CU01030",
+      "product_id": "PR0187",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 387.75
+    },
+    {
+      "transaction_id": "TX008657",
+      "customer_id": "CU02839",
+      "product_id": "PR0050",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 860.56
+    },
+    {
+      "transaction_id": "TX006382",
+      "customer_id": "CU01967",
+      "product_id": "PR0113",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 28.12
+    },
+    {
+      "transaction_id": "TX007494",
+      "customer_id": "CU02024",
+      "product_id": "PR0044",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 214.91
+    },
+    {
+      "transaction_id": "TX002715",
+      "customer_id": "CU00330",
+      "product_id": "PR0076",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 226.28
+    },
+    {
+      "transaction_id": "TX001599",
+      "customer_id": "CU01065",
+      "product_id": "PR0116",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 789.4
+    },
+    {
+      "transaction_id": "TX016165",
+      "customer_id": "CU01898",
+      "product_id": "PR0189",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 30.21
+    },
+    {
+      "transaction_id": "TX015557",
+      "customer_id": "CU02693",
+      "product_id": "PR0213",
+      "prob": 0.31,
+      "status": "Returned",
+      "revenue_at_risk": 100.06
+    },
+    {
+      "transaction_id": "TX014436",
+      "customer_id": "CU01842",
+      "product_id": "PR0136",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 749.98
+    },
+    {
+      "transaction_id": "TX001289",
+      "customer_id": "CU02975",
+      "product_id": "PR0214",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 1318.9
+    },
+    {
+      "transaction_id": "TX008233",
+      "customer_id": "CU02968",
+      "product_id": "PR0120",
+      "prob": 0.31,
+      "status": "Returned",
+      "revenue_at_risk": 583.51
+    },
+    {
+      "transaction_id": "TX011546",
+      "customer_id": "CU01349",
+      "product_id": "PR0083",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 987.13
+    },
+    {
+      "transaction_id": "TX002533",
+      "customer_id": "CU02635",
+      "product_id": "PR0129",
+      "prob": 0.31,
+      "status": "Completed",
+      "revenue_at_risk": 153.08
+    },
+    {
+      "transaction_id": "TX016765",
+      "customer_id": "CU01239",
+      "product_id": "PR0028",
+      "prob": 0.3,
+      "status": "Returned",
+      "revenue_at_risk": 6.42
+    },
+    {
+      "transaction_id": "TX001006",
+      "customer_id": "CU00506",
+      "product_id": "PR0210",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 36.77
+    },
+    {
+      "transaction_id": "TX002608",
+      "customer_id": "CU01867",
+      "product_id": "PR0214",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 1190.3
+    },
+    {
+      "transaction_id": "TX000483",
+      "customer_id": "CU00912",
+      "product_id": "PR0070",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 288.28
+    },
+    {
+      "transaction_id": "TX011508",
+      "customer_id": "CU01293",
+      "product_id": "PR0049",
+      "prob": 0.3,
+      "status": "Returned",
+      "revenue_at_risk": 618.55
+    },
+    {
+      "transaction_id": "TX007173",
+      "customer_id": "CU02488",
+      "product_id": "PR0130",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 280.64
+    },
+    {
+      "transaction_id": "TX011245",
+      "customer_id": "CU02897",
+      "product_id": "PR0017",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 361.8
+    },
+    {
+      "transaction_id": "TX013025",
+      "customer_id": "CU00960",
+      "product_id": "PR0014",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 402.05
+    },
+    {
+      "transaction_id": "TX016468",
+      "customer_id": "CU01577",
+      "product_id": "PR0099",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 23.02
+    },
+    {
+      "transaction_id": "TX009509",
+      "customer_id": "CU00115",
+      "product_id": "PR0046",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 923.0
+    },
+    {
+      "transaction_id": "TX014073",
+      "customer_id": "CU02871",
+      "product_id": "PR0247",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 1604.12
+    },
+    {
+      "transaction_id": "TX017371",
+      "customer_id": "CU01812",
+      "product_id": "PR0005",
+      "prob": 0.3,
+      "status": "Cancelled",
+      "revenue_at_risk": 505.82
+    },
+    {
+      "transaction_id": "TX016781",
+      "customer_id": "CU02761",
+      "product_id": "PR0187",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 484.35
+    },
+    {
+      "transaction_id": "TX011248",
+      "customer_id": "CU02446",
+      "product_id": "PR0210",
+      "prob": 0.3,
+      "status": "Completed",
+      "revenue_at_risk": 8.2
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "categories": [
+    {
+      "category": "Beauty",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 582
+        },
+        {
+          "month": "2025-02",
+          "quantity": 592
+        },
+        {
+          "month": "2025-03",
+          "quantity": 531
+        },
+        {
+          "month": "2025-04",
+          "quantity": 451
+        },
+        {
+          "month": "2025-05",
+          "quantity": 680
+        },
+        {
+          "month": "2025-06",
+          "quantity": 516
+        },
+        {
+          "month": "2025-07",
+          "quantity": 555
+        },
+        {
+          "month": "2025-08",
+          "quantity": 579
+        },
+        {
+          "month": "2025-09",
+          "quantity": 503
+        },
+        {
+          "month": "2025-10",
+          "quantity": 554
+        },
+        {
+          "month": "2025-11",
+          "quantity": 451
+        },
+        {
+          "month": "2025-12",
+          "quantity": 536
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 513.67
+        },
+        {
+          "month": "2026-02",
+          "quantity": 513.67
+        },
+        {
+          "month": "2026-03",
+          "quantity": 513.67
+        }
+      ]
+    },
+    {
+      "category": "Electronics",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 696
+        },
+        {
+          "month": "2025-02",
+          "quantity": 539
+        },
+        {
+          "month": "2025-03",
+          "quantity": 661
+        },
+        {
+          "month": "2025-04",
+          "quantity": 595
+        },
+        {
+          "month": "2025-05",
+          "quantity": 687
+        },
+        {
+          "month": "2025-06",
+          "quantity": 620
+        },
+        {
+          "month": "2025-07",
+          "quantity": 729
+        },
+        {
+          "month": "2025-08",
+          "quantity": 663
+        },
+        {
+          "month": "2025-09",
+          "quantity": 642
+        },
+        {
+          "month": "2025-10",
+          "quantity": 652
+        },
+        {
+          "month": "2025-11",
+          "quantity": 582
+        },
+        {
+          "month": "2025-12",
+          "quantity": 603
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 612.33
+        },
+        {
+          "month": "2026-02",
+          "quantity": 612.33
+        },
+        {
+          "month": "2026-03",
+          "quantity": 612.33
+        }
+      ]
+    },
+    {
+      "category": "Fashion",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 578
+        },
+        {
+          "month": "2025-02",
+          "quantity": 449
+        },
+        {
+          "month": "2025-03",
+          "quantity": 624
+        },
+        {
+          "month": "2025-04",
+          "quantity": 471
+        },
+        {
+          "month": "2025-05",
+          "quantity": 548
+        },
+        {
+          "month": "2025-06",
+          "quantity": 463
+        },
+        {
+          "month": "2025-07",
+          "quantity": 621
+        },
+        {
+          "month": "2025-08",
+          "quantity": 475
+        },
+        {
+          "month": "2025-09",
+          "quantity": 464
+        },
+        {
+          "month": "2025-10",
+          "quantity": 447
+        },
+        {
+          "month": "2025-11",
+          "quantity": 472
+        },
+        {
+          "month": "2025-12",
+          "quantity": 511
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 476.67
+        },
+        {
+          "month": "2026-02",
+          "quantity": 476.67
+        },
+        {
+          "month": "2026-03",
+          "quantity": 476.67
+        }
+      ]
+    },
+    {
+      "category": "Grocery",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 603
+        },
+        {
+          "month": "2025-02",
+          "quantity": 519
+        },
+        {
+          "month": "2025-03",
+          "quantity": 522
+        },
+        {
+          "month": "2025-04",
+          "quantity": 667
+        },
+        {
+          "month": "2025-05",
+          "quantity": 617
+        },
+        {
+          "month": "2025-06",
+          "quantity": 564
+        },
+        {
+          "month": "2025-07",
+          "quantity": 593
+        },
+        {
+          "month": "2025-08",
+          "quantity": 642
+        },
+        {
+          "month": "2025-09",
+          "quantity": 607
+        },
+        {
+          "month": "2025-10",
+          "quantity": 649
+        },
+        {
+          "month": "2025-11",
+          "quantity": 658
+        },
+        {
+          "month": "2025-12",
+          "quantity": 632
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 646.33
+        },
+        {
+          "month": "2026-02",
+          "quantity": 646.33
+        },
+        {
+          "month": "2026-03",
+          "quantity": 646.33
+        }
+      ]
+    },
+    {
+      "category": "Home",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 605
+        },
+        {
+          "month": "2025-02",
+          "quantity": 618
+        },
+        {
+          "month": "2025-03",
+          "quantity": 655
+        },
+        {
+          "month": "2025-04",
+          "quantity": 567
+        },
+        {
+          "month": "2025-05",
+          "quantity": 647
+        },
+        {
+          "month": "2025-06",
+          "quantity": 637
+        },
+        {
+          "month": "2025-07",
+          "quantity": 705
+        },
+        {
+          "month": "2025-08",
+          "quantity": 590
+        },
+        {
+          "month": "2025-09",
+          "quantity": 624
+        },
+        {
+          "month": "2025-10",
+          "quantity": 595
+        },
+        {
+          "month": "2025-11",
+          "quantity": 532
+        },
+        {
+          "month": "2025-12",
+          "quantity": 586
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 571.0
+        },
+        {
+          "month": "2026-02",
+          "quantity": 571.0
+        },
+        {
+          "month": "2026-03",
+          "quantity": 571.0
+        }
+      ]
+    },
+    {
+      "category": "Sports",
+      "history": [
+        {
+          "month": "2025-01",
+          "quantity": 578
+        },
+        {
+          "month": "2025-02",
+          "quantity": 531
+        },
+        {
+          "month": "2025-03",
+          "quantity": 628
+        },
+        {
+          "month": "2025-04",
+          "quantity": 511
+        },
+        {
+          "month": "2025-05",
+          "quantity": 643
+        },
+        {
+          "month": "2025-06",
+          "quantity": 520
+        },
+        {
+          "month": "2025-07",
+          "quantity": 608
+        },
+        {
+          "month": "2025-08",
+          "quantity": 638
+        },
+        {
+          "month": "2025-09",
+          "quantity": 623
+        },
+        {
+          "month": "2025-10",
+          "quantity": 608
+        },
+        {
+          "month": "2025-11",
+          "quantity": 638
+        },
+        {
+          "month": "2025-12",
+          "quantity": 615
+        }
+      ],
+      "forecast": [
+        {
+          "month": "2026-01",
+          "quantity": 620.33
+        },
+        {
+          "month": "2026-02",
+          "quantity": 620.33
+        },
+        {
+          "month": "2026-03",
+          "quantity": 620.33
+        }
+      ]
+    }
+  ]
+}

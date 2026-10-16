@@ -1,0 +1,105 @@
+{
+  "by_channel": [
+    {
+      "channel": "Social",
+      "spend": 1049224.57,
+      "impressions": 11867189,
+      "clicks": 1248759,
+      "conversions": 185978,
+      "cac": 5.64,
+      "roas_proxy": 92.7
+    },
+    {
+      "channel": "App",
+      "spend": 1025838.82,
+      "impressions": 13298268,
+      "clicks": 1334110,
+      "conversions": 196957,
+      "cac": 5.21,
+      "roas_proxy": 98.79
+    },
+    {
+      "channel": "Store",
+      "spend": 945945.23,
+      "impressions": 11743265,
+      "clicks": 1185014,
+      "conversions": 165779,
+      "cac": 5.71,
+      "roas_proxy": 93.15
+    },
+    {
+      "channel": "Web",
+      "spend": 894962.32,
+      "impressions": 11597583,
+      "clicks": 1153819,
+      "conversions": 180155,
+      "cac": 4.97,
+      "roas_proxy": 106.16
+    },
+    {
+      "channel": "Email",
+      "spend": 889045.14,
+      "impressions": 10963582,
+      "clicks": 1123992,
+      "conversions": 166542,
+      "cac": 5.34,
+      "roas_proxy": 97.97
+    }
+  ],
+  "by_category": [
+    {
+      "category": "Beauty",
+      "spend": 870069.67,
+      "impressions": 10301844,
+      "clicks": 970967,
+      "conversions": 152756,
+      "cac": 5.7,
+      "roas_proxy": 75.75
+    },
+    {
+      "category": "Electronics",
+      "spend": 820672.69,
+      "impressions": 10514296,
+      "clicks": 1073059,
+      "conversions": 154962,
+      "cac": 5.3,
+      "roas_proxy": 98.03
+    },
+    {
+      "category": "Fashion",
+      "spend": 801837.79,
+      "impressions": 9250662,
+      "clicks": 1015438,
+      "conversions": 150801,
+      "cac": 5.32,
+      "roas_proxy": 100.44
+    },
+    {
+      "category": "Grocery",
+      "spend": 800272.54,
+      "impressions": 10413599,
+      "clicks": 1120445,
+      "conversions": 156739,
+      "cac": 5.11,
+      "roas_proxy": 103.11
+    },
+    {
+      "category": "Home",
+      "spend": 776488.27,
+      "impressions": 9955304,
+      "clicks": 949539,
+      "conversions": 153135,
+      "cac": 5.07,
+      "roas_proxy": 112.6
+    },
+    {
+      "category": "Sports",
+      "spend": 735675.12,
+      "impressions": 9034182,
+      "clicks": 916246,
+      "conversions": 127018,
+      "cac": 5.79,
+      "roas_proxy": 94.64
+    }
+  ]
+}

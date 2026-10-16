@@ -1,0 +1,44 @@
+{
+  "segments": [
+    {
+      "id": "S1",
+      "name": "Champions \u2014 High-Value Loyalists",
+      "size": 910,
+      "avg_recency_days": 37.27,
+      "avg_frequency": 7.02,
+      "avg_monetary": 4060.09,
+      "return_rate": 6.09,
+      "description": "910 customers; avg 7.0 orders, $4,060 spend, 37d since last order, 6.1% return rate."
+    },
+    {
+      "id": "S2",
+      "name": "Frequent Returners",
+      "size": 574,
+      "avg_recency_days": 54.95,
+      "avg_frequency": 3.27,
+      "avg_monetary": 1634.02,
+      "return_rate": 30.62,
+      "description": "574 customers; avg 3.3 orders, $1,634 spend, 55d since last order, 30.6% return rate."
+    },
+    {
+      "id": "S3",
+      "name": "Active Regulars",
+      "size": 1081,
+      "avg_recency_days": 41.23,
+      "avg_frequency": 4.14,
+      "avg_monetary": 1907.09,
+      "return_rate": 1.97,
+      "description": "1,081 customers; avg 4.1 orders, $1,907 spend, 41d since last order, 2.0% return rate."
+    },
+    {
+      "id": "S4",
+      "name": "Dormant \u2014 At Risk of Churn",
+      "size": 406,
+      "avg_recency_days": 171.81,
+      "avg_frequency": 3.02,
+      "avg_monetary": 1496.36,
+      "return_rate": 3.39,
+      "description": "406 customers; avg 3.0 orders, $1,496 spend, 172d since last order, 3.4% return rate."
+    }
+  ]
+}

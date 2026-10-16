@@ -1,0 +1,402 @@
+[
+  {
+    "id": "LEAK-001",
+    "segment": {
+      "category": "Electronics",
+      "region": "Central",
+      "channel": "Store",
+      "month": "2025-04"
+    },
+    "metric": "margin_pct",
+    "observed": -222.99,
+    "expected": 28.36,
+    "z": -9.73,
+    "severity": "high",
+    "period": "2025-04",
+    "evidence": "Margin -223.0% vs category avg 28.4% (z=-9.73). Worst driver: product PR0163 (margin $-697); avg discount 10.0% vs category 8.3%; 9 txns in cell."
+  },
+  {
+    "id": "LEAK-002",
+    "segment": {
+      "category": "Beauty",
+      "region": "North",
+      "channel": "Store",
+      "month": "2025-12"
+    },
+    "metric": "margin_pct",
+    "observed": -140.83,
+    "expected": -0.62,
+    "z": -4.2,
+    "severity": "high",
+    "period": "2025-12",
+    "evidence": "Margin -140.8% vs category avg -0.6% (z=-4.20). Worst driver: product PR0021 (margin $-1,720); avg discount 7.8% vs category 8.3%; 9 txns in cell."
+  },
+  {
+    "id": "LEAK-003",
+    "segment": {
+      "category": "Electronics",
+      "region": "North",
+      "channel": "Store",
+      "month": "2025-12"
+    },
+    "metric": "return_rate",
+    "observed": 44.44,
+    "expected": 10.1,
+    "z": 3.91,
+    "severity": "high",
+    "period": "2025-12",
+    "evidence": "Return rate 44.4% vs category avg 10.1% (z=3.91). Top returned product: PR0087 (1 returns); avg discount 10.0% vs category 8.3%; 10 txns in cell."
+  },
+  {
+    "id": "LEAK-004",
+    "segment": {
+      "category": "Fashion",
+      "region": "West",
+      "channel": "App",
+      "month": "2025-09"
+    },
+    "metric": "return_rate",
+    "observed": 42.86,
+    "expected": 9.2,
+    "z": 3.83,
+    "severity": "high",
+    "period": "2025-09",
+    "evidence": "Return rate 42.9% vs category avg 9.2% (z=3.83). Top returned product: PR0007 (1 returns); avg discount 13.8% vs category 8.4%; 19 txns in cell."
+  },
+  {
+    "id": "LEAK-005",
+    "segment": {
+      "category": "Sports",
+      "region": "South",
+      "channel": "Store",
+      "month": "2025-06"
+    },
+    "metric": "return_rate",
+    "observed": 41.67,
+    "expected": 9.56,
+    "z": 3.76,
+    "severity": "high",
+    "period": "2025-06",
+    "evidence": "Return rate 41.7% vs category avg 9.6% (z=3.76). Top returned product: PR0001 (1 returns); avg discount 9.3% vs category 8.3%; 12 txns in cell."
+  },
+  {
+    "id": "LEAK-006",
+    "segment": {
+      "category": "Electronics",
+      "region": "Central",
+      "channel": "Store",
+      "month": "2025-03"
+    },
+    "metric": "return_rate",
+    "observed": 42.86,
+    "expected": 10.1,
+    "z": 3.72,
+    "severity": "high",
+    "period": "2025-03",
+    "evidence": "Return rate 42.9% vs category avg 10.1% (z=3.72). Top returned product: PR0026 (1 returns); avg discount 10.0% vs category 8.3%; 8 txns in cell."
+  },
+  {
+    "id": "LEAK-007",
+    "segment": {
+      "category": "Electronics",
+      "region": "South",
+      "channel": "Store",
+      "month": "2025-12"
+    },
+    "metric": "return_rate",
+    "observed": 42.86,
+    "expected": 10.1,
+    "z": 3.72,
+    "severity": "high",
+    "period": "2025-12",
+    "evidence": "Return rate 42.9% vs category avg 10.1% (z=3.72). Top returned product: PR0096 (1 returns); avg discount 11.3% vs category 8.3%; 10 txns in cell."
+  },
+  {
+    "id": "LEAK-008",
+    "segment": {
+      "category": "Fashion",
+      "region": "East",
+      "channel": "Web",
+      "month": "2025-07"
+    },
+    "metric": "return_rate",
+    "observed": 41.67,
+    "expected": 9.2,
+    "z": 3.7,
+    "severity": "high",
+    "period": "2025-07",
+    "evidence": "Return rate 41.7% vs category avg 9.2% (z=3.70). Top returned product: PR0088 (1 returns); avg discount 9.3% vs category 8.4%; 13 txns in cell."
+  },
+  {
+    "id": "LEAK-009",
+    "segment": {
+      "category": "Fashion",
+      "region": "Central",
+      "channel": "Web",
+      "month": "2025-06"
+    },
+    "metric": "margin_pct",
+    "observed": -26.72,
+    "expected": 32.89,
+    "z": -3.67,
+    "severity": "high",
+    "period": "2025-06",
+    "evidence": "Margin -26.7% vs category avg 32.9% (z=-3.67). Worst driver: product PR0020 (margin $-687); avg discount 10.0% vs category 8.4%; 16 txns in cell."
+  },
+  {
+    "id": "LEAK-010",
+    "segment": {
+      "category": "Grocery",
+      "region": "South",
+      "channel": "App",
+      "month": "2025-02"
+    },
+    "metric": "margin_pct",
+    "observed": -41.11,
+    "expected": 21.22,
+    "z": -3.55,
+    "severity": "high",
+    "period": "2025-02",
+    "evidence": "Margin -41.1% vs category avg 21.2% (z=-3.55). Worst driver: product PR0129 (margin $-773); avg discount 7.5% vs category 8.3%; 10 txns in cell."
+  },
+  {
+    "id": "LEAK-011",
+    "segment": {
+      "category": "Home",
+      "region": "East",
+      "channel": "App",
+      "month": "2025-08"
+    },
+    "metric": "return_rate",
+    "observed": 38.46,
+    "expected": 9.33,
+    "z": 3.54,
+    "severity": "high",
+    "period": "2025-08",
+    "evidence": "Return rate 38.5% vs category avg 9.3% (z=3.54). Top returned product: PR0113 (1 returns); avg discount 10.6% vs category 8.4%; 16 txns in cell."
+  },
+  {
+    "id": "LEAK-012",
+    "segment": {
+      "category": "Home",
+      "region": "South",
+      "channel": "Web",
+      "month": "2025-05"
+    },
+    "metric": "return_rate",
+    "observed": 38.46,
+    "expected": 9.33,
+    "z": 3.54,
+    "severity": "high",
+    "period": "2025-05",
+    "evidence": "Return rate 38.5% vs category avg 9.3% (z=3.54). Top returned product: PR0005 (1 returns); avg discount 9.4% vs category 8.4%; 16 txns in cell."
+  },
+  {
+    "id": "LEAK-013",
+    "segment": {
+      "category": "Sports",
+      "region": "East",
+      "channel": "App",
+      "month": "2025-02"
+    },
+    "metric": "margin_pct",
+    "observed": -22.41,
+    "expected": 27.16,
+    "z": -3.32,
+    "severity": "medium",
+    "period": "2025-02",
+    "evidence": "Margin -22.4% vs category avg 27.2% (z=-3.32). Worst driver: product PR0201 (margin $-636); avg discount 9.5% vs category 8.3%; 16 txns in cell."
+  },
+  {
+    "id": "LEAK-014",
+    "segment": {
+      "category": "Sports",
+      "region": "North",
+      "channel": "Web",
+      "month": "2025-12"
+    },
+    "metric": "return_rate",
+    "observed": 37.5,
+    "expected": 9.56,
+    "z": 3.27,
+    "severity": "medium",
+    "period": "2025-12",
+    "evidence": "Return rate 37.5% vs category avg 9.6% (z=3.27). Top returned product: PR0093 (1 returns); avg discount 12.0% vs category 8.3%; 10 txns in cell."
+  },
+  {
+    "id": "LEAK-015",
+    "segment": {
+      "category": "Beauty",
+      "region": "West",
+      "channel": "Web",
+      "month": "2025-08"
+    },
+    "metric": "margin_pct",
+    "observed": -108.02,
+    "expected": -0.62,
+    "z": -3.22,
+    "severity": "medium",
+    "period": "2025-08",
+    "evidence": "Margin -108.0% vs category avg -0.6% (z=-3.22). Worst driver: product PR0153 (margin $-1,203); avg discount 11.4% vs category 8.3%; 24 txns in cell."
+  },
+  {
+    "id": "LEAK-016",
+    "segment": {
+      "category": "Beauty",
+      "region": "South",
+      "channel": "Store",
+      "month": "2025-01"
+    },
+    "metric": "margin_pct",
+    "observed": -106.56,
+    "expected": -0.62,
+    "z": -3.17,
+    "severity": "medium",
+    "period": "2025-01",
+    "evidence": "Margin -106.6% vs category avg -0.6% (z=-3.17). Worst driver: product PR0008 (margin $-233); avg discount 5.7% vs category 8.3%; 9 txns in cell."
+  },
+  {
+    "id": "LEAK-017",
+    "segment": {
+      "category": "Home",
+      "region": "East",
+      "channel": "App",
+      "month": "2025-11"
+    },
+    "metric": "margin_pct",
+    "observed": -20.78,
+    "expected": 31.04,
+    "z": -3.13,
+    "severity": "medium",
+    "period": "2025-11",
+    "evidence": "Margin -20.8% vs category avg 31.0% (z=-3.13). Worst driver: product PR0069 (margin $-636); avg discount 6.2% vs category 8.4%; 18 txns in cell."
+  },
+  {
+    "id": "LEAK-018",
+    "segment": {
+      "category": "Sports",
+      "region": "North",
+      "channel": "App",
+      "month": "2025-10"
+    },
+    "metric": "margin_pct",
+    "observed": -18.49,
+    "expected": 27.16,
+    "z": -3.06,
+    "severity": "medium",
+    "period": "2025-10",
+    "evidence": "Margin -18.5% vs category avg 27.2% (z=-3.06). Worst driver: product PR0003 (margin $-519); avg discount 11.4% vs category 8.3%; 15 txns in cell."
+  },
+  {
+    "id": "LEAK-019",
+    "segment": {
+      "category": "Grocery",
+      "region": "North",
+      "channel": "Store",
+      "month": "2025-05"
+    },
+    "metric": "return_rate",
+    "observed": 33.33,
+    "expected": 9.58,
+    "z": 3.01,
+    "severity": "medium",
+    "period": "2025-05",
+    "evidence": "Return rate 33.3% vs category avg 9.6% (z=3.01). Top returned product: PR0120 (1 returns); avg discount 5.0% vs category 8.3%; 8 txns in cell."
+  },
+  {
+    "id": "LEAK-020",
+    "segment": {
+      "category": "Beauty",
+      "region": "West",
+      "channel": "App",
+      "month": "2025-11"
+    },
+    "metric": "return_rate",
+    "observed": 31.25,
+    "expected": 9.02,
+    "z": 2.98,
+    "severity": "low",
+    "period": "2025-11",
+    "evidence": "Return rate 31.2% vs category avg 9.0% (z=2.98). Top returned product: PR0018 (1 returns); avg discount 10.0% vs category 8.3%; 19 txns in cell."
+  },
+  {
+    "id": "LEAK-021",
+    "segment": {
+      "category": "Home",
+      "region": "West",
+      "channel": "Store",
+      "month": "2025-07"
+    },
+    "metric": "return_rate",
+    "observed": 33.33,
+    "expected": 9.33,
+    "z": 2.92,
+    "severity": "low",
+    "period": "2025-07",
+    "evidence": "Return rate 33.3% vs category avg 9.3% (z=2.92). Top returned product: PR0098 (1 returns); avg discount 10.0% vs category 8.4%; 13 txns in cell."
+  },
+  {
+    "id": "LEAK-022",
+    "segment": {
+      "category": "Beauty",
+      "region": "East",
+      "channel": "Web",
+      "month": "2025-03"
+    },
+    "metric": "return_rate",
+    "observed": 30.77,
+    "expected": 9.02,
+    "z": 2.91,
+    "severity": "low",
+    "period": "2025-03",
+    "evidence": "Return rate 30.8% vs category avg 9.0% (z=2.91). Top returned product: PR0021 (1 returns); avg discount 6.1% vs category 8.3%; 17 txns in cell."
+  },
+  {
+    "id": "LEAK-023",
+    "segment": {
+      "category": "Beauty",
+      "region": "East",
+      "channel": "Store",
+      "month": "2025-02"
+    },
+    "metric": "margin_pct",
+    "observed": -96.33,
+    "expected": -0.62,
+    "z": -2.87,
+    "severity": "low",
+    "period": "2025-02",
+    "evidence": "Margin -96.3% vs category avg -0.6% (z=-2.87). Worst driver: product PR0037 (margin $-965); avg discount 5.0% vs category 8.3%; 8 txns in cell."
+  },
+  {
+    "id": "LEAK-024",
+    "segment": {
+      "category": "Fashion",
+      "region": "East",
+      "channel": "Store",
+      "month": "2025-08"
+    },
+    "metric": "margin_pct",
+    "observed": -12.31,
+    "expected": 32.89,
+    "z": -2.78,
+    "severity": "low",
+    "period": "2025-08",
+    "evidence": "Margin -12.3% vs category avg 32.9% (z=-2.78). Worst driver: product PR0020 (margin $-1,173); avg discount 6.4% vs category 8.4%; 9 txns in cell."
+  },
+  {
+    "id": "LEAK-025",
+    "segment": {
+      "category": "Fashion",
+      "region": "South",
+      "channel": "App",
+      "month": "2025-09"
+    },
+    "metric": "return_rate",
+    "observed": 33.33,
+    "expected": 9.2,
+    "z": 2.75,
+    "severity": "low",
+    "period": "2025-09",
+    "evidence": "Return rate 33.3% vs category avg 9.2% (z=2.75). Top returned product: PR0023 (1 returns); avg discount 10.0% vs category 8.4%; 13 txns in cell."
+  }
+]

@@ -1,0 +1,804 @@
+{
+  "products": [
+    {
+      "product_id": "PR0166",
+      "category": "Beauty",
+      "stock_on_hand": 4,
+      "reorder_threshold": 34,
+      "risk_score": 0.69,
+      "reason": "Stock 4 vs reorder threshold 34; 1 stockout(s) in last 6 records; avg supplier delay 7d vs 6d lead time."
+    },
+    {
+      "product_id": "PR0039",
+      "category": "Grocery",
+      "stock_on_hand": 2,
+      "reorder_threshold": 55,
+      "risk_score": 0.68,
+      "reason": "Stock 2 vs reorder threshold 55; 0 stockout(s) in last 6 records; avg supplier delay 8d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0132",
+      "category": "Electronics",
+      "stock_on_hand": 3,
+      "reorder_threshold": 45,
+      "risk_score": 0.67,
+      "reason": "Stock 3 vs reorder threshold 45; 1 stockout(s) in last 6 records; avg supplier delay 7d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0222",
+      "category": "Fashion",
+      "stock_on_hand": 24,
+      "reorder_threshold": 68,
+      "risk_score": 0.67,
+      "reason": "Stock 24 vs reorder threshold 68; 3 stockout(s) in last 6 records; avg supplier delay 11d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0239",
+      "category": "Grocery",
+      "stock_on_hand": 3,
+      "reorder_threshold": 66,
+      "risk_score": 0.67,
+      "reason": "Stock 3 vs reorder threshold 66; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 18d lead time."
+    },
+    {
+      "product_id": "PR0184",
+      "category": "Electronics",
+      "stock_on_hand": 5,
+      "reorder_threshold": 71,
+      "risk_score": 0.66,
+      "reason": "Stock 5 vs reorder threshold 71; 0 stockout(s) in last 6 records; avg supplier delay 5d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0072",
+      "category": "Sports",
+      "stock_on_hand": 12,
+      "reorder_threshold": 62,
+      "risk_score": 0.65,
+      "reason": "Stock 12 vs reorder threshold 62; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0117",
+      "category": "Home",
+      "stock_on_hand": 15,
+      "reorder_threshold": 67,
+      "risk_score": 0.59,
+      "reason": "Stock 15 vs reorder threshold 67; 0 stockout(s) in last 6 records; avg supplier delay 14d vs 11d lead time."
+    },
+    {
+      "product_id": "PR0007",
+      "category": "Fashion",
+      "stock_on_hand": 34,
+      "reorder_threshold": 76,
+      "risk_score": 0.53,
+      "reason": "Stock 34 vs reorder threshold 76; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0170",
+      "category": "Fashion",
+      "stock_on_hand": 20,
+      "reorder_threshold": 53,
+      "risk_score": 0.51,
+      "reason": "Stock 20 vs reorder threshold 53; 0 stockout(s) in last 6 records; avg supplier delay 8d vs 6d lead time."
+    },
+    {
+      "product_id": "PR0015",
+      "category": "Grocery",
+      "stock_on_hand": 22,
+      "reorder_threshold": 62,
+      "risk_score": 0.5,
+      "reason": "Stock 22 vs reorder threshold 62; 0 stockout(s) in last 6 records; avg supplier delay 10d vs 11d lead time."
+    },
+    {
+      "product_id": "PR0071",
+      "category": "Electronics",
+      "stock_on_hand": 3,
+      "reorder_threshold": 12,
+      "risk_score": 0.5,
+      "reason": "Stock 3 vs reorder threshold 12; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 27d lead time."
+    },
+    {
+      "product_id": "PR0143",
+      "category": "Beauty",
+      "stock_on_hand": 34,
+      "reorder_threshold": 67,
+      "risk_score": 0.5,
+      "reason": "Stock 34 vs reorder threshold 67; 1 stockout(s) in last 6 records; avg supplier delay 12d vs 10d lead time."
+    },
+    {
+      "product_id": "PR0010",
+      "category": "Beauty",
+      "stock_on_hand": 5,
+      "reorder_threshold": 10,
+      "risk_score": 0.49,
+      "reason": "Stock 5 vs reorder threshold 10; 1 stockout(s) in last 6 records; avg supplier delay 4d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0211",
+      "category": "Fashion",
+      "stock_on_hand": 10,
+      "reorder_threshold": 42,
+      "risk_score": 0.49,
+      "reason": "Stock 10 vs reorder threshold 42; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 26d lead time."
+    },
+    {
+      "product_id": "PR0043",
+      "category": "Home",
+      "stock_on_hand": 31,
+      "reorder_threshold": 62,
+      "risk_score": 0.45,
+      "reason": "Stock 31 vs reorder threshold 62; 2 stockout(s) in last 6 records; avg supplier delay 8d vs 15d lead time."
+    },
+    {
+      "product_id": "PR0027",
+      "category": "Electronics",
+      "stock_on_hand": 25,
+      "reorder_threshold": 67,
+      "risk_score": 0.44,
+      "reason": "Stock 25 vs reorder threshold 67; 2 stockout(s) in last 6 records; avg supplier delay 4d vs 26d lead time."
+    },
+    {
+      "product_id": "PR0224",
+      "category": "Home",
+      "stock_on_hand": 24,
+      "reorder_threshold": 72,
+      "risk_score": 0.44,
+      "reason": "Stock 24 vs reorder threshold 72; 1 stockout(s) in last 6 records; avg supplier delay 7d vs 25d lead time."
+    },
+    {
+      "product_id": "PR0085",
+      "category": "Beauty",
+      "stock_on_hand": 25,
+      "reorder_threshold": 47,
+      "risk_score": 0.41,
+      "reason": "Stock 25 vs reorder threshold 47; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 27d lead time."
+    },
+    {
+      "product_id": "PR0134",
+      "category": "Grocery",
+      "stock_on_hand": 28,
+      "reorder_threshold": 40,
+      "risk_score": 0.41,
+      "reason": "Stock 28 vs reorder threshold 40; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 13d lead time."
+    },
+    {
+      "product_id": "PR0009",
+      "category": "Electronics",
+      "stock_on_hand": 273,
+      "reorder_threshold": 60,
+      "risk_score": 0.4,
+      "reason": "Stock 273 vs reorder threshold 60; 4 stockout(s) in last 6 records; avg supplier delay 11d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0160",
+      "category": "Electronics",
+      "stock_on_hand": 280,
+      "reorder_threshold": 12,
+      "risk_score": 0.4,
+      "reason": "Stock 280 vs reorder threshold 12; 4 stockout(s) in last 6 records; avg supplier delay 7d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0092",
+      "category": "Grocery",
+      "stock_on_hand": 33,
+      "reorder_threshold": 51,
+      "risk_score": 0.39,
+      "reason": "Stock 33 vs reorder threshold 51; 3 stockout(s) in last 6 records; avg supplier delay 9d vs 27d lead time."
+    },
+    {
+      "product_id": "PR0077",
+      "category": "Sports",
+      "stock_on_hand": 38,
+      "reorder_threshold": 44,
+      "risk_score": 0.38,
+      "reason": "Stock 38 vs reorder threshold 44; 3 stockout(s) in last 6 records; avg supplier delay 7d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0250",
+      "category": "Electronics",
+      "stock_on_hand": 25,
+      "reorder_threshold": 63,
+      "risk_score": 0.36,
+      "reason": "Stock 25 vs reorder threshold 63; 0 stockout(s) in last 6 records; avg supplier delay 8d vs 26d lead time."
+    },
+    {
+      "product_id": "PR0005",
+      "category": "Home",
+      "stock_on_hand": 221,
+      "reorder_threshold": 52,
+      "risk_score": 0.35,
+      "reason": "Stock 221 vs reorder threshold 52; 3 stockout(s) in last 6 records; avg supplier delay 12d vs 3d lead time."
+    },
+    {
+      "product_id": "PR0097",
+      "category": "Fashion",
+      "stock_on_hand": 261,
+      "reorder_threshold": 74,
+      "risk_score": 0.35,
+      "reason": "Stock 261 vs reorder threshold 74; 3 stockout(s) in last 6 records; avg supplier delay 9d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0230",
+      "category": "Grocery",
+      "stock_on_hand": 55,
+      "reorder_threshold": 72,
+      "risk_score": 0.35,
+      "reason": "Stock 55 vs reorder threshold 72; 1 stockout(s) in last 6 records; avg supplier delay 12d vs 14d lead time."
+    },
+    {
+      "product_id": "PR0153",
+      "category": "Beauty",
+      "stock_on_hand": 174,
+      "reorder_threshold": 67,
+      "risk_score": 0.33,
+      "reason": "Stock 174 vs reorder threshold 67; 3 stockout(s) in last 6 records; avg supplier delay 10d vs 11d lead time."
+    },
+    {
+      "product_id": "PR0042",
+      "category": "Beauty",
+      "stock_on_hand": 47,
+      "reorder_threshold": 56,
+      "risk_score": 0.32,
+      "reason": "Stock 47 vs reorder threshold 56; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 10d lead time."
+    },
+    {
+      "product_id": "PR0090",
+      "category": "Sports",
+      "stock_on_hand": 29,
+      "reorder_threshold": 38,
+      "risk_score": 0.32,
+      "reason": "Stock 29 vs reorder threshold 38; 0 stockout(s) in last 6 records; avg supplier delay 10d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0173",
+      "category": "Home",
+      "stock_on_hand": 58,
+      "reorder_threshold": 68,
+      "risk_score": 0.32,
+      "reason": "Stock 58 vs reorder threshold 68; 1 stockout(s) in last 6 records; avg supplier delay 13d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0180",
+      "category": "Sports",
+      "stock_on_hand": 16,
+      "reorder_threshold": 23,
+      "risk_score": 0.32,
+      "reason": "Stock 16 vs reorder threshold 23; 0 stockout(s) in last 6 records; avg supplier delay 10d vs 12d lead time."
+    },
+    {
+      "product_id": "PR0086",
+      "category": "Fashion",
+      "stock_on_hand": 31,
+      "reorder_threshold": 59,
+      "risk_score": 0.31,
+      "reason": "Stock 31 vs reorder threshold 59; 0 stockout(s) in last 6 records; avg supplier delay 9d vs 23d lead time."
+    },
+    {
+      "product_id": "PR0023",
+      "category": "Fashion",
+      "stock_on_hand": 40,
+      "reorder_threshold": 11,
+      "risk_score": 0.3,
+      "reason": "Stock 40 vs reorder threshold 11; 2 stockout(s) in last 6 records; avg supplier delay 7d vs 6d lead time."
+    },
+    {
+      "product_id": "PR0028",
+      "category": "Grocery",
+      "stock_on_hand": 159,
+      "reorder_threshold": 25,
+      "risk_score": 0.3,
+      "reason": "Stock 159 vs reorder threshold 25; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0047",
+      "category": "Electronics",
+      "stock_on_hand": 104,
+      "reorder_threshold": 60,
+      "risk_score": 0.3,
+      "reason": "Stock 104 vs reorder threshold 60; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0051",
+      "category": "Fashion",
+      "stock_on_hand": 208,
+      "reorder_threshold": 31,
+      "risk_score": 0.3,
+      "reason": "Stock 208 vs reorder threshold 31; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0054",
+      "category": "Fashion",
+      "stock_on_hand": 266,
+      "reorder_threshold": 69,
+      "risk_score": 0.3,
+      "reason": "Stock 266 vs reorder threshold 69; 2 stockout(s) in last 6 records; avg supplier delay 14d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0070",
+      "category": "Home",
+      "stock_on_hand": 284,
+      "reorder_threshold": 62,
+      "risk_score": 0.3,
+      "reason": "Stock 284 vs reorder threshold 62; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0078",
+      "category": "Fashion",
+      "stock_on_hand": 246,
+      "reorder_threshold": 75,
+      "risk_score": 0.3,
+      "reason": "Stock 246 vs reorder threshold 75; 2 stockout(s) in last 6 records; avg supplier delay 12d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0100",
+      "category": "Sports",
+      "stock_on_hand": 288,
+      "reorder_threshold": 15,
+      "risk_score": 0.3,
+      "reason": "Stock 288 vs reorder threshold 15; 2 stockout(s) in last 6 records; avg supplier delay 11d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0118",
+      "category": "Beauty",
+      "stock_on_hand": 116,
+      "reorder_threshold": 66,
+      "risk_score": 0.3,
+      "reason": "Stock 116 vs reorder threshold 66; 2 stockout(s) in last 6 records; avg supplier delay 12d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0151",
+      "category": "Electronics",
+      "stock_on_hand": 214,
+      "reorder_threshold": 49,
+      "risk_score": 0.3,
+      "reason": "Stock 214 vs reorder threshold 49; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 3d lead time."
+    },
+    {
+      "product_id": "PR0154",
+      "category": "Beauty",
+      "stock_on_hand": 297,
+      "reorder_threshold": 48,
+      "risk_score": 0.3,
+      "reason": "Stock 297 vs reorder threshold 48; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0206",
+      "category": "Electronics",
+      "stock_on_hand": 102,
+      "reorder_threshold": 28,
+      "risk_score": 0.3,
+      "reason": "Stock 102 vs reorder threshold 28; 2 stockout(s) in last 6 records; avg supplier delay 12d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0213",
+      "category": "Grocery",
+      "stock_on_hand": 138,
+      "reorder_threshold": 79,
+      "risk_score": 0.3,
+      "reason": "Stock 138 vs reorder threshold 79; 2 stockout(s) in last 6 records; avg supplier delay 11d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0223",
+      "category": "Grocery",
+      "stock_on_hand": 186,
+      "reorder_threshold": 23,
+      "risk_score": 0.3,
+      "reason": "Stock 186 vs reorder threshold 23; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0245",
+      "category": "Home",
+      "stock_on_hand": 92,
+      "reorder_threshold": 16,
+      "risk_score": 0.3,
+      "reason": "Stock 92 vs reorder threshold 16; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0001",
+      "category": "Sports",
+      "stock_on_hand": 174,
+      "reorder_threshold": 23,
+      "risk_score": 0.29,
+      "reason": "Stock 174 vs reorder threshold 23; 2 stockout(s) in last 6 records; avg supplier delay 12d vs 12d lead time."
+    },
+    {
+      "product_id": "PR0036",
+      "category": "Beauty",
+      "stock_on_hand": 289,
+      "reorder_threshold": 25,
+      "risk_score": 0.29,
+      "reason": "Stock 289 vs reorder threshold 25; 3 stockout(s) in last 6 records; avg supplier delay 14d vs 20d lead time."
+    },
+    {
+      "product_id": "PR0073",
+      "category": "Sports",
+      "stock_on_hand": 64,
+      "reorder_threshold": 56,
+      "risk_score": 0.29,
+      "reason": "Stock 64 vs reorder threshold 56; 2 stockout(s) in last 6 records; avg supplier delay 7d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0216",
+      "category": "Beauty",
+      "stock_on_hand": 213,
+      "reorder_threshold": 70,
+      "risk_score": 0.29,
+      "reason": "Stock 213 vs reorder threshold 70; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 11d lead time."
+    },
+    {
+      "product_id": "PR0065",
+      "category": "Sports",
+      "stock_on_hand": 67,
+      "reorder_threshold": 79,
+      "risk_score": 0.28,
+      "reason": "Stock 67 vs reorder threshold 79; 0 stockout(s) in last 6 records; avg supplier delay 11d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0241",
+      "category": "Home",
+      "stock_on_hand": 74,
+      "reorder_threshold": 77,
+      "risk_score": 0.28,
+      "reason": "Stock 74 vs reorder threshold 77; 2 stockout(s) in last 6 records; avg supplier delay 8d vs 10d lead time."
+    },
+    {
+      "product_id": "PR0234",
+      "category": "Grocery",
+      "stock_on_hand": 115,
+      "reorder_threshold": 47,
+      "risk_score": 0.27,
+      "reason": "Stock 115 vs reorder threshold 47; 4 stockout(s) in last 6 records; avg supplier delay 10d vs 29d lead time."
+    },
+    {
+      "product_id": "PR0247",
+      "category": "Sports",
+      "stock_on_hand": 143,
+      "reorder_threshold": 39,
+      "risk_score": 0.27,
+      "reason": "Stock 143 vs reorder threshold 39; 2 stockout(s) in last 6 records; avg supplier delay 11d vs 13d lead time."
+    },
+    {
+      "product_id": "PR0003",
+      "category": "Sports",
+      "stock_on_hand": 122,
+      "reorder_threshold": 54,
+      "risk_score": 0.25,
+      "reason": "Stock 122 vs reorder threshold 54; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0017",
+      "category": "Grocery",
+      "stock_on_hand": 75,
+      "reorder_threshold": 39,
+      "risk_score": 0.25,
+      "reason": "Stock 75 vs reorder threshold 39; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0034",
+      "category": "Grocery",
+      "stock_on_hand": 67,
+      "reorder_threshold": 27,
+      "risk_score": 0.25,
+      "reason": "Stock 67 vs reorder threshold 27; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0040",
+      "category": "Fashion",
+      "stock_on_hand": 186,
+      "reorder_threshold": 59,
+      "risk_score": 0.25,
+      "reason": "Stock 186 vs reorder threshold 59; 1 stockout(s) in last 6 records; avg supplier delay 13d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0050",
+      "category": "Home",
+      "stock_on_hand": 295,
+      "reorder_threshold": 53,
+      "risk_score": 0.25,
+      "reason": "Stock 295 vs reorder threshold 53; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0082",
+      "category": "Beauty",
+      "stock_on_hand": 72,
+      "reorder_threshold": 23,
+      "risk_score": 0.25,
+      "reason": "Stock 72 vs reorder threshold 23; 1 stockout(s) in last 6 records; avg supplier delay 14d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0098",
+      "category": "Home",
+      "stock_on_hand": 290,
+      "reorder_threshold": 75,
+      "risk_score": 0.25,
+      "reason": "Stock 290 vs reorder threshold 75; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0103",
+      "category": "Electronics",
+      "stock_on_hand": 198,
+      "reorder_threshold": 10,
+      "risk_score": 0.25,
+      "reason": "Stock 198 vs reorder threshold 10; 1 stockout(s) in last 6 records; avg supplier delay 15d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0111",
+      "category": "Sports",
+      "stock_on_hand": 128,
+      "reorder_threshold": 68,
+      "risk_score": 0.25,
+      "reason": "Stock 128 vs reorder threshold 68; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 8d lead time."
+    },
+    {
+      "product_id": "PR0124",
+      "category": "Sports",
+      "stock_on_hand": 262,
+      "reorder_threshold": 72,
+      "risk_score": 0.25,
+      "reason": "Stock 262 vs reorder threshold 72; 1 stockout(s) in last 6 records; avg supplier delay 6d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0126",
+      "category": "Electronics",
+      "stock_on_hand": 174,
+      "reorder_threshold": 71,
+      "risk_score": 0.25,
+      "reason": "Stock 174 vs reorder threshold 71; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 9d lead time."
+    },
+    {
+      "product_id": "PR0131",
+      "category": "Grocery",
+      "stock_on_hand": 176,
+      "reorder_threshold": 59,
+      "risk_score": 0.25,
+      "reason": "Stock 176 vs reorder threshold 59; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0137",
+      "category": "Home",
+      "stock_on_hand": 35,
+      "reorder_threshold": 14,
+      "risk_score": 0.25,
+      "reason": "Stock 35 vs reorder threshold 14; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0138",
+      "category": "Electronics",
+      "stock_on_hand": 286,
+      "reorder_threshold": 75,
+      "risk_score": 0.25,
+      "reason": "Stock 286 vs reorder threshold 75; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0145",
+      "category": "Grocery",
+      "stock_on_hand": 186,
+      "reorder_threshold": 18,
+      "risk_score": 0.25,
+      "reason": "Stock 186 vs reorder threshold 18; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0146",
+      "category": "Electronics",
+      "stock_on_hand": 211,
+      "reorder_threshold": 12,
+      "risk_score": 0.25,
+      "reason": "Stock 211 vs reorder threshold 12; 1 stockout(s) in last 6 records; avg supplier delay 16d vs 3d lead time."
+    },
+    {
+      "product_id": "PR0147",
+      "category": "Grocery",
+      "stock_on_hand": 220,
+      "reorder_threshold": 76,
+      "risk_score": 0.25,
+      "reason": "Stock 220 vs reorder threshold 76; 1 stockout(s) in last 6 records; avg supplier delay 7d vs 6d lead time."
+    },
+    {
+      "product_id": "PR0150",
+      "category": "Fashion",
+      "stock_on_hand": 101,
+      "reorder_threshold": 79,
+      "risk_score": 0.25,
+      "reason": "Stock 101 vs reorder threshold 79; 1 stockout(s) in last 6 records; avg supplier delay 9d vs 5d lead time."
+    },
+    {
+      "product_id": "PR0152",
+      "category": "Beauty",
+      "stock_on_hand": 206,
+      "reorder_threshold": 42,
+      "risk_score": 0.25,
+      "reason": "Stock 206 vs reorder threshold 42; 1 stockout(s) in last 6 records; avg supplier delay 8d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0174",
+      "category": "Electronics",
+      "stock_on_hand": 139,
+      "reorder_threshold": 76,
+      "risk_score": 0.25,
+      "reason": "Stock 139 vs reorder threshold 76; 1 stockout(s) in last 6 records; avg supplier delay 11d vs 3d lead time."
+    },
+    {
+      "product_id": "PR0178",
+      "category": "Beauty",
+      "stock_on_hand": 299,
+      "reorder_threshold": 16,
+      "risk_score": 0.25,
+      "reason": "Stock 299 vs reorder threshold 16; 1 stockout(s) in last 6 records; avg supplier delay 16d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0181",
+      "category": "Electronics",
+      "stock_on_hand": 225,
+      "reorder_threshold": 18,
+      "risk_score": 0.25,
+      "reason": "Stock 225 vs reorder threshold 18; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 1d lead time."
+    },
+    {
+      "product_id": "PR0196",
+      "category": "Home",
+      "stock_on_hand": 286,
+      "reorder_threshold": 67,
+      "risk_score": 0.25,
+      "reason": "Stock 286 vs reorder threshold 67; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 3d lead time."
+    },
+    {
+      "product_id": "PR0203",
+      "category": "Beauty",
+      "stock_on_hand": 185,
+      "reorder_threshold": 69,
+      "risk_score": 0.25,
+      "reason": "Stock 185 vs reorder threshold 69; 1 stockout(s) in last 6 records; avg supplier delay 13d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0212",
+      "category": "Sports",
+      "stock_on_hand": 253,
+      "reorder_threshold": 50,
+      "risk_score": 0.25,
+      "reason": "Stock 253 vs reorder threshold 50; 1 stockout(s) in last 6 records; avg supplier delay 12d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0214",
+      "category": "Home",
+      "stock_on_hand": 100,
+      "reorder_threshold": 44,
+      "risk_score": 0.25,
+      "reason": "Stock 100 vs reorder threshold 44; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 10d lead time."
+    },
+    {
+      "product_id": "PR0215",
+      "category": "Grocery",
+      "stock_on_hand": 105,
+      "reorder_threshold": 74,
+      "risk_score": 0.25,
+      "reason": "Stock 105 vs reorder threshold 74; 1 stockout(s) in last 6 records; avg supplier delay 12d vs 2d lead time."
+    },
+    {
+      "product_id": "PR0218",
+      "category": "Grocery",
+      "stock_on_hand": 139,
+      "reorder_threshold": 67,
+      "risk_score": 0.25,
+      "reason": "Stock 139 vs reorder threshold 67; 1 stockout(s) in last 6 records; avg supplier delay 6d vs 4d lead time."
+    },
+    {
+      "product_id": "PR0248",
+      "category": "Fashion",
+      "stock_on_hand": 242,
+      "reorder_threshold": 77,
+      "risk_score": 0.25,
+      "reason": "Stock 242 vs reorder threshold 77; 1 stockout(s) in last 6 records; avg supplier delay 14d vs 13d lead time."
+    },
+    {
+      "product_id": "PR0056",
+      "category": "Beauty",
+      "stock_on_hand": 101,
+      "reorder_threshold": 65,
+      "risk_score": 0.24,
+      "reason": "Stock 101 vs reorder threshold 65; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 15d lead time."
+    },
+    {
+      "product_id": "PR0122",
+      "category": "Electronics",
+      "stock_on_hand": 151,
+      "reorder_threshold": 42,
+      "risk_score": 0.24,
+      "reason": "Stock 151 vs reorder threshold 42; 1 stockout(s) in last 6 records; avg supplier delay 10d vs 10d lead time."
+    },
+    {
+      "product_id": "PR0148",
+      "category": "Electronics",
+      "stock_on_hand": 112,
+      "reorder_threshold": 26,
+      "risk_score": 0.24,
+      "reason": "Stock 112 vs reorder threshold 26; 2 stockout(s) in last 6 records; avg supplier delay 8d vs 12d lead time."
+    },
+    {
+      "product_id": "PR0155",
+      "category": "Grocery",
+      "stock_on_hand": 99,
+      "reorder_threshold": 35,
+      "risk_score": 0.24,
+      "reason": "Stock 99 vs reorder threshold 35; 1 stockout(s) in last 6 records; avg supplier delay 12d vs 13d lead time."
+    },
+    {
+      "product_id": "PR0186",
+      "category": "Fashion",
+      "stock_on_hand": 226,
+      "reorder_threshold": 14,
+      "risk_score": 0.24,
+      "reason": "Stock 226 vs reorder threshold 14; 1 stockout(s) in last 6 records; avg supplier delay 14d vs 15d lead time."
+    },
+    {
+      "product_id": "PR0192",
+      "category": "Grocery",
+      "stock_on_hand": 45,
+      "reorder_threshold": 56,
+      "risk_score": 0.24,
+      "reason": "Stock 45 vs reorder threshold 56; 0 stockout(s) in last 6 records; avg supplier delay 10d vs 14d lead time."
+    },
+    {
+      "product_id": "PR0057",
+      "category": "Beauty",
+      "stock_on_hand": 149,
+      "reorder_threshold": 29,
+      "risk_score": 0.22,
+      "reason": "Stock 149 vs reorder threshold 29; 1 stockout(s) in last 6 records; avg supplier delay 13d vs 15d lead time."
+    },
+    {
+      "product_id": "PR0061",
+      "category": "Grocery",
+      "stock_on_hand": 62,
+      "reorder_threshold": 61,
+      "risk_score": 0.22,
+      "reason": "Stock 62 vs reorder threshold 61; 2 stockout(s) in last 6 records; avg supplier delay 9d vs 15d lead time."
+    },
+    {
+      "product_id": "PR0080",
+      "category": "Home",
+      "stock_on_hand": 56,
+      "reorder_threshold": 16,
+      "risk_score": 0.22,
+      "reason": "Stock 56 vs reorder threshold 16; 2 stockout(s) in last 6 records; avg supplier delay 10d vs 17d lead time."
+    },
+    {
+      "product_id": "PR0084",
+      "category": "Sports",
+      "stock_on_hand": 287,
+      "reorder_threshold": 53,
+      "risk_score": 0.22,
+      "reason": "Stock 287 vs reorder threshold 53; 3 stockout(s) in last 6 records; avg supplier delay 4d vs 13d lead time."
+    },
+    {
+      "product_id": "PR0127",
+      "category": "Fashion",
+      "stock_on_hand": 122,
+      "reorder_threshold": 45,
+      "risk_score": 0.22,
+      "reason": "Stock 122 vs reorder threshold 45; 2 stockout(s) in last 6 records; avg supplier delay 13d vs 22d lead time."
+    },
+    {
+      "product_id": "PR0164",
+      "category": "Grocery",
+      "stock_on_hand": 29,
+      "reorder_threshold": 22,
+      "risk_score": 0.22,
+      "reason": "Stock 29 vs reorder threshold 22; 2 stockout(s) in last 6 records; avg supplier delay 4d vs 7d lead time."
+    },
+    {
+      "product_id": "PR0012",
+      "category": "Beauty",
+      "stock_on_hand": 254,
+      "reorder_threshold": 38,
+      "risk_score": 0.21,
+      "reason": "Stock 254 vs reorder threshold 38; 2 stockout(s) in last 6 records; avg supplier delay 12d vs 22d lead time."
+    },
+    {
+      "product_id": "PR0089",
+      "category": "Electronics",
+      "stock_on_hand": 214,
+      "reorder_threshold": 53,
+      "risk_score": 0.21,
+      "reason": "Stock 214 vs reorder threshold 53; 1 stockout(s) in last 6 records; avg supplier delay 15d vs 19d lead time."
+    }
+  ]
+}
