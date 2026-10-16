@@ -92,7 +92,7 @@ export default function DetectPage() {
               key={s}
               onClick={() => setSevFilter(s)}
               aria-pressed={sevFilter === s}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold capitalize transition-colors duration-150 ${
+              className={`inline-flex min-h-[44px] items-center rounded-full border px-4 py-2 text-xs font-semibold capitalize transition-colors duration-150 ${
                 sevFilter === s
                   ? "border-accent bg-accent text-white"
                   : "border-line bg-paper text-ink2 hover:border-linedark hover:text-ink"
@@ -108,7 +108,7 @@ export default function DetectPage() {
               key={m}
               onClick={() => setMetricFilter(m)}
               aria-pressed={metricFilter === m}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors duration-150 ${
+              className={`inline-flex min-h-[44px] items-center rounded-full border px-4 py-2 text-xs font-semibold transition-colors duration-150 ${
                 metricFilter === m
                   ? "border-ink bg-ink text-white"
                   : "border-line bg-paper text-ink2 hover:border-linedark hover:text-ink"
