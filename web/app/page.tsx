@@ -31,7 +31,7 @@ function KpiCard({
   return (
     <div className="card">
       <div className="kicker">{kicker}</div>
-      <div className={`tnum mt-2.5 font-display text-[26px] font-bold tracking-tight ${valueColor}`}>
+      <div className={`tnum mt-2.5 font-display text-[22px] font-bold tracking-tight sm:text-[26px] ${valueColor}`}>
         {value}
       </div>
       {sub && <div className="tnum mt-1.5 text-xs text-fog">{sub}</div>}
@@ -50,7 +50,7 @@ export default function OverviewPage() {
       <div className="animate-rise max-w-3xl">
         <div className="mb-3 h-[3px] w-8 rounded-full bg-accent" aria-hidden />
         <div className="micro-label">LeakGuard · Revenue intelligence · 2025</div>
-        <h1 className="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-[44px] sm:leading-[1.05]">
+        <h1 className="mt-2 font-display text-[32px] font-bold leading-[1.08] tracking-tight text-ink sm:text-[44px] sm:leading-[1.05]">
           Where is the money leaking?
         </h1>
         <p className="tnum mt-3 max-w-2xl text-[15px] leading-relaxed text-ink2">
@@ -58,12 +58,12 @@ export default function OverviewPage() {
           <span className="font-semibold text-brick-deep">{highCount} high-severity flags</span>{" "}
           detected across margin and return-rate anomalies
         </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/act" className="btn-primary">
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href="/act" className="btn-primary w-full sm:w-auto">
             View recommended actions
             <IconArrowRight className="h-4 w-4" />
           </Link>
-          <Link href="/detect" className="btn-secondary">
+          <Link href="/detect" className="btn-secondary w-full sm:w-auto">
             Browse all 25 flags
             <IconArrowRight className="h-4 w-4" />
           </Link>
